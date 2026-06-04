@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── Primary SEO ── -->
+  <title>Luxury Dhow Cruises & Mnemba Island Tours | Paradise Experiences Zanzibar</title>
+  <meta name="description"
+    content="Experience the ultimate Zanzibar dhow cruise — private Mnemba Island tours, romantic sunset cruises, and luxury Indian Ocean adventures with Paradise Experiences." />
+  <meta name="keywords"
+    content="Zanzibar dhow cruise, Mnemba island tours, luxury sunset cruise Zanzibar, private dhow charter, Indian Ocean sailing, Zanzibar boat trips" />
+  <link rel="canonical" href="https://www.paradiseexperiences.com/dhow" />
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Paradise Experiences" />
+  <meta property="og:title" content="Luxury Dhow Cruises & Mnemba Island Tours | Paradise Experiences" />
+  <meta property="og:description"
+    content="Set sail on the crystal-clear waters of Zanzibar. Explore Mnemba Island, pristine coral reefs, and romantic Indian Ocean sunsets aboard our private dhow." />
+  <meta property="og:image" content="../assests/images/dhow2.jpeg" />
+  <meta property="og:url" content="https://www.paradiseexperiences.com/dhow" />
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Luxury Dhow Cruises & Mnemba Island Tours | Paradise Experiences" />
+  <meta name="twitter:description"
+    content="Private Zanzibar dhow cruises, Mnemba island snorkelling, and sunset dinners on the Indian Ocean." />
+  <meta name="twitter:image" content="../assests/images/dhow2.jpeg" />
+
+  <!-- ── Structured Data ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TravelAgency",
+        "name": "Paradise Experiences",
+        "url": "https://www.paradiseexperiences.com",
+        "description": "Luxury dhow cruises, Mnemba Island tours, and sunset experiences in Zanzibar.",
+        "address": { "@type": "PostalAddress", "addressLocality": "Zanzibar", "addressCountry": "TZ" },
+        "contactPoint": { "@type": "ContactPoint", "contactType": "reservations", "telephone": "+255-000-000000" }
+      },
+      {
+        "@type": "TouristTrip",
+        "name": "Romantic Sunset Cruise – Zanzibar Dhow",
+        "description": "Private luxury dhow sunset cruise along Zanzibar's north coast with refreshments.",
+        "touristType": "Couples, Honeymooners",
+        "provider": { "@type": "TravelAgency", "name": "Paradise Experiences" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ── Fonts ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    /* ════════════════════════════════════════
+       TOKENS & RESET
+    ════════════════════════════════════════ */
+    :root {
+      --navy:        #0b1a2e;
+      --navy-mid:    #122036;
+      --ocean:       #1a3a5c;
+      --gold:        #c9a96e;
+      --gold-light:  #e2c48a;
+      --sand:        #f5efe6;
+      --white:       #ffffff;
+      --text-dim:    rgba(255,255,255,0.68);
+      --glass-bg:    rgba(11,26,46,0.55);
+      --glass-border:rgba(201,169,110,0.22);
+      --radius-card: 16px;
+      --transition:  0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+      --font-display:'Cormorant Garamond', Georgia, serif;
+      --font-body:   'Jost', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { text-decoration: none; color: inherit; }
+
+    /* ════════════════════════════════════════
+       HEADER
+    ════════════════════════════════════════ */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      transition: background var(--transition), padding var(--transition);
+    }
+
+    .header.scrolled {
+      background: rgba(11,26,46,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 14px 48px;
+    }
+
+    /* Logo */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+      filter: brightness(1.1);
+    }
+
+    .logo-title {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+    }
+
+    /* Nav */
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .nav a {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.82);
+      position: relative;
+      transition: color var(--transition);
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+
+    .nav a:hover { color: var(--gold-light); }
+    .nav a:hover::after { width: 100%; }
+
+    /* Hamburger (mobile) */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 26px; height: 1.5px;
+      background: var(--gold-light);
+      transition: var(--transition);
+    }
+
+    /* ════════════════════════════════════════
+       HERO
+    ════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      height: 100svh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+
+    /* Image */
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      /* Lazy-load equivalent: image starts only when page loads */
+      will-change: transform;
+    }
+
+    /* Layered atmospheric overlays */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(11,26,46,0.78) 0%, rgba(11,26,46,0.25) 65%, transparent 100%),
+        linear-gradient(to top, var(--navy) 0%, transparent 45%);
+    }
+
+    /* Subtle golden accent line */
+    .hero-accent-line {
+      position: absolute;
+      left: 48px;
+      top: 50%;
+      transform: translateY(-50%) translateY(-48px);
+      width: 2px;
+      height: 0;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      animation: lineGrow 1.6s 0.8s ease forwards;
+    }
+
+    @keyframes lineGrow {
+      to { height: 110px; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 80px;
+      max-width: 760px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.9s 0.5s ease forwards;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 7vw, 6.4rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(22px);
+      animation: fadeUp 1s 0.75s ease forwards;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text-dim);
+      max-width: 420px;
+      margin-bottom: 44px;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 1s 1s ease forwards;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 1s 1.2s ease forwards;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.28);
+      padding-bottom: 2px;
+      transition: color var(--transition), border-color var(--transition);
+    }
+
+    .btn-ghost:hover {
+      color: var(--gold-light);
+      border-color: var(--gold);
+    }
+
+    /* Scroll hint */
+    .scroll-hint {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeUp 1s 1.8s ease forwards;
+    }
+
+    .scroll-hint span {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .scroll-arrow {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s 2.2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.7); }
+      50%       { opacity: 1;   transform: scaleY(1); }
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ════════════════════════════════════════
+       EXPERIENCES SECTION
+    ════════════════════════════════════════ */
+    .experiences {
+      padding: 40px 40px 40px;
+      background-color: rgb(13, 42, 52);
+      }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      letter-spacing: 0.01em;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .section-divider {
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 24px auto 0;
+    }
+
+    /* ── Experience Grid ── */
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+
+    .exp-card {
+      position: relative;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      background: var(--navy-mid);
+      /* animate in on scroll */
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .exp-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .exp-card:nth-child(2) { transition-delay: 0.1s; }
+    .exp-card:nth-child(3) { transition-delay: 0.2s; }
+    .exp-card:nth-child(4) { transition-delay: 0.3s; }
+
+    .exp-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .exp-card:hover img {
+      transform: scale(1.06);
+    }
+
+    /* Glass overlay */
+    .exp-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(11,26,46,0.96) 0%,
+        rgba(11,26,46,0.5) 45%,
+        transparent 100%
+      );
+      transition: background var(--transition);
+    }
+
+    .exp-card:hover .exp-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(11,26,46,0.98) 0%,
+        rgba(11,26,46,0.65) 55%,
+        rgba(11,26,46,0.12) 100%
+      );
+    }
+
+    /* Card content */
+    .exp-content {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 28px 26px;
+    }
+
+    .exp-tag {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201,169,110,0.12);
+      border: 1px solid var(--glass-border);
+      border-radius: 2px;
+      padding: 4px 10px;
+      margin-bottom: 12px;
+    }
+
+    .exp-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .exp-desc {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--text-dim);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s ease, opacity 0.4s ease;
+    }
+
+    .exp-card:hover .exp-desc {
+      max-height: 120px;
+      opacity: 1;
+    }
+
+    .exp-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.4s 0.05s ease, transform 0.4s 0.05s ease;
+    }
+
+    .exp-cta svg {
+      transition: transform var(--transition);
+    }
+
+    .exp-card:hover .exp-cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .exp-card:hover .exp-cta svg {
+      transform: translateX(4px);
+    }
+
+    /* Card number badge */
+    .exp-number {
+      position: absolute;
+      top: 20px; right: 22px;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.08em;
+    }
+
+    /* ════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════ */
+    .footer {
+      background: rgba(7,16,28,0.95);
+      border-top: 1px solid var(--glass-border);
+      padding: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 300;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .footer-social a {
+      color: rgba(255,255,255,0.45);
+      transition: color var(--transition);
+    }
+
+    .footer-social a:hover { color: var(--gold); }
+
+    /* ════════════════════════════════════════
+       WHATSAPP BUTTON
+    ════════════════════════════════════════ */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 32px; right: 32px;
+      z-index: 200;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 28px rgba(37,211,102,0.38), 0 2px 8px rgba(0,0,0,0.3);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .whatsapp-float::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(37,211,102,0.4);
+      animation: waPulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes waPulse {
+      0%, 100% { opacity: 0; transform: scale(1); }
+      50%       { opacity: 1; transform: scale(1.14); }
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-4px) scale(1.06);
+      box-shadow: 0 14px 36px rgba(37,211,102,0.5), 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* ════════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════════ */
+    @media (max-width: 1100px) {
+      .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .exp-card {
+        aspect-ratio: 4 / 3;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header { padding: 18px 24px; }
+      .header.scrolled { padding: 14px 24px; }
+
+      .nav {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(7,16,28,0.97);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 36px;
+        z-index: 99;
+      }
+
+      .nav.open { display: flex; }
+
+      .nav a {
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+      }
+
+      .menu-toggle { display: flex; }
+
+      .hero-content {
+        padding: 0 28px;
+        max-width: 100%;
+      }
+
+      .hero-accent-line { left: 28px; }
+
+      .experiences { padding: 72px 20px 96px; }
+
+      .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .exp-card {
+        aspect-ratio: 3 / 4;
+      }
+
+      .exp-desc { display: none; }
+
+      .footer {
+        padding: 36px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .exp-card {
+        aspect-ratio: 4 / 3;
+      }
+    }
+
+    /* ════════════════════════════════════════
+       MENU TOGGLE ANIMATION
+    ════════════════════════════════════════ */
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    /* ════════════════════════════════════════
+       REDUCED MOTION
+    ════════════════════════════════════════ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ──────────────── HEADER ──────────────── -->
+  <header class="header" role="banner" id="siteHeader">
+    <div class="logo-container">
+      <a href="/index3.html" class="logo-container">
+      <img src="/assests/logo/Paradise logo.png" alt="Paradise Experiences Logo" class="logo" width="38" height="38" />
+      <span class="logo-title">Paradise</span></a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" id="navMenu" role="navigation" aria-label="Main navigation">
+      <a href="/index3.html">Home</a>
+      <a href="#">Destinations</a>
+      <a href="#experiences" aria-current="page">Experiences</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ──────────────── HERO ──────────────── -->
+  <main>
+    <section class="hero" aria-label="Paradise Dhow hero">
+
+  <img
+    class="hero-image"
+    src="../assests/images/dhow2.jpg"
+    alt="Paradise Dhow"
+  />
+
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-accent-line" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Zanzibar · Indian Ocean</p>
+
+    <h1 class="hero-title">
+      Paradise<br /><em>Dhow</em>
+    </h1>
+
+    <p class="hero-sub">
+      Set sail on crystal-clear waters, explore untouched islands, and drift into
+      golden sunsets aboard our private luxury dhow.
+    </p>
+
+    <div class="hero-cta-group">
+      <a href="#experiences" class="btn-primary">
+        Explore Experiences
+      </a>
+      <a href="https://wa.me/255000000000" class="btn-ghost">
+        Book via WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+
+</section>
+
+    <!-- ──────────────── EXPERIENCES ──────────────── -->
+    <section class="experiences" id="experiences" aria-labelledby="experiencesHeading">
+      <div class="section-header">
+        <span class="section-label">Curated for You</span>
+        <h2 class="section-title" id="experiencesHeading">Our Top Experiences</h2>
+        <div class="section-divider" aria-hidden="true"></div>
+      </div>
+
+      <div class="experience-grid">
+
+        <!-- Card 1 -->
+        <article class="exp-card">
+          <img
+            src="/assests/images/sunset cruise.jpg"
+            alt="Private romantic sunset dhow cruise off Zanzibar coast"
+            loading="lazy"
+            width="400"
+            height="533"
+          />
+          <div class="exp-overlay" aria-hidden="true"></div>
+          <span class="exp-number" aria-hidden="true">01</span>
+          <div class="exp-content">
+            <span class="exp-tag">Private Charter</span>
+            <h3 class="exp-title">Sunset Cruise</h3>
+            <p class="exp-desc">
+              Our beautiful African Queen Dhow awaits for an unforgettable private journey
+              at sea — champagne, fresh fruit, and the hues of the Indian Ocean sky.
+            </p>
+            <a href="mnemba-private.html" class="exp-cta" aria-label="Book Romantic Sunset Cruise">
+              Book Now
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                <path d="M8.5 1L13 5L8.5 9M1 5H13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="exp-card">
+          <img
+            src="../assests/images/food1.jpg"
+            alt="Romantic sunset dinner on a dhow in Zanzibar"
+            loading="lazy"
+            width="400"
+            height="533"
+          />
+          <div class="exp-overlay" aria-hidden="true"></div>
+          <span class="exp-number" aria-hidden="true">02</span>
+          <div class="exp-content">
+            <span class="exp-tag">Dining at Sea</span>
+            <h3 class="exp-title">Sunset Dinner</h3>
+            <p class="exp-desc">
+              A locally sourced, freshly prepared meal crafted for two — served aboard our
+              beautiful dhow as the sun melts into the horizon.
+            </p>
+            <a href="mnemba-sharing.html" class="exp-cta" aria-label="Book Romantic Sunset Dinner">
+              Book Now
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                <path d="M8.5 1L13 5L8.5 9M1 5H13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="exp-card">
+          <img
+            src="../assests/images/mnemba.jpg"
+            alt="Mnemba Island luxury full-day snorkelling and sailing tour"
+            loading="lazy"
+            width="400"
+            height="533"
+          />
+          <div class="exp-overlay" aria-hidden="true"></div>
+          <span class="exp-number" aria-hidden="true">03</span>
+          <div class="exp-content">
+            <span class="exp-tag">Full Day</span>
+            <h3 class="exp-title">Mnemba Luxury Full Day</h3>
+            <p class="exp-desc">
+              Sail to the pristine coral atolls of Mnemba Island — snorkel with sea turtles,
+              enjoy fresh coconuts, and return with memories that last a lifetime.
+            </p>
+            <a href="sunset-cruise.html" class="exp-cta" aria-label="Book Mnemba Full Day Tour">
+              Book Now
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                <path d="M8.5 1L13 5L8.5 9M1 5H13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="exp-card">
+          <img
+            src="../assests/images/tumbatu.jpg"
+            alt="Tumbatu half-day sailing excursion in Zanzibar"
+            loading="lazy"
+            width="400"
+            height="533"
+          />
+          <div class="exp-overlay" aria-hidden="true"></div>
+          <span class="exp-number" aria-hidden="true">04</span>
+          <div class="exp-content">
+            <span class="exp-tag">Half Day</span>
+            <h3 class="exp-title">Tumbatu Half Day</h3>
+            <p class="exp-desc">
+              Discover the storied waters of Tumbatu — a half-day voyage through mangroves,
+              ancient ruins, and untouched Zanzibari coastline.
+            </p>
+            <a href="sunset-dinner.html" class="exp-cta" aria-label="Book Tumbatu Half Day">
+              Book Now
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                <path d="M8.5 1L13 5L8.5 9M1 5H13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ──────────────── FOOTER ──────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-brand">
+      <span class="footer-logo">Paradise Experiences</span>
+      <p class="footer-copy">&copy; 2026 Paradise Experiences. All Rights Reserved.</p>
+    </div>
+
+    <nav class="footer-social" aria-label="Social media links">
+      <a href="#" aria-label="Follow us on Instagram" rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.98-10.169a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="Follow us on Facebook" rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="Follow us on X (Twitter)" rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835-8.16-10.665h6.234l4.259 5.628 5.433-5.628Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+        </svg>
+      </a>
+    </nav>
+  </footer>
+
+  <!-- ──────────────── WHATSAPP ──────────────── -->
+  <a
+    href="https://wa.me/255000000000"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with us on WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" fill="white" width="28" height="28" aria-hidden="true">
+      <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.128.552 4.195 1.603 6.012L.414 23.586l5.679-1.49A11.967 11.967 0 0012.031 24c6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm0 21.981a9.96 9.96 0 01-5.068-1.378l-.363-.215-3.766.987.994-3.668-.236-.375A9.957 9.957 0 012.05 12.031C2.05 6.523 6.524 2.05 12.031 2.05c5.507 0 9.981 4.473 9.981 9.981 0 5.508-4.474 9.981-9.981 9.981zm5.474-7.485c-.3-.15-1.774-.876-2.048-.976-.274-.1-.474-.15-.674.15-.2.3-.774.975-.95 1.175-.174.2-.349.225-.649.075-.3-.15-1.266-.466-2.41-1.484-.89-.792-1.492-1.771-1.666-2.071-.174-.3-.018-.462.132-.612.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.674-1.625-.924-2.225-.244-.585-.494-.505-.674-.515-.174-.01-.374-.01-.574-.01-.2 0-.524.075-.8.375-.274.3-1.05 1.025-1.05 2.5s1.074 2.9 1.224 3.1c.15.2 2.112 3.221 5.112 4.516.714.307 1.272.49 1.705.626.717.227 1.37.195 1.884.118.577-.087 1.774-.725 2.024-1.425.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z"/>
+    </svg>
+  </a>
+
+  <!-- ──────────────── JS: Minimal & Purposeful ──────────────── -->
+  <script>
+    (function () {
+      'use strict';
+
+      // ── Sticky header on scroll ──
+      const header = document.getElementById('siteHeader');
+      window.addEventListener('scroll', function () {
+        header.classList.toggle('scrolled', window.scrollY > 60);
+      }, { passive: true });
+
+      // ── Mobile menu toggle ──
+      const toggle = document.getElementById('menuToggle');
+      const nav    = document.getElementById('navMenu');
+
+      toggle.addEventListener('click', function () {
+        const isOpen = nav.classList.toggle('open');
+        toggle.classList.toggle('active', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+
+      // Close nav when a link is clicked
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+
+      // ── Scroll-reveal for experience cards ──
+      const cards = document.querySelectorAll('.exp-card');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        cards.forEach(function (card) { observer.observe(card); });
+      } else {
+        // Fallback for older browsers
+        cards.forEach(function (card) { card.classList.add('visible'); });
+      }
+    })();
+  </script>
+
+</body>
+</html>

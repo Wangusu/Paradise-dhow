@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover luxury travel, pristine beaches, and unforgettable wildlife safaris with Paradise Experiences in Zanzibar. Book your dream island vacation today.">
+  <title>Zanzibar Luxury Dhow & Safari Tours | Paradise Experiences</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Zanzibar Luxury Safari and Dhow Experiences</h1>
+  <style>
+    :root {
+      --brown-dark:#3d1a0a;--sand:#e8c99a;--sand-light:#f5e6cc;
+      --ocean-deep:#071e2e;--teal:#2ec4b6;--gold:#c9973a;
+      --gold-light:#f0c060;--white:#ffffff;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Josefin Sans',sans-serif;background:var(--ocean-deep);color:var(--sand-light);overflow-x:hidden;}
+
+    /* HEADER */
+    .header{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:linear-gradient(to bottom,rgba(7,30,46,0.95),rgba(7,30,46,0));backdrop-filter:blur(6px);transition:background 0.4s;}
+    .header.scrolled{background:rgba(7,30,46,0.97);}
+    .logo-container{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .logo{height:38px;width:auto;object-fit:contain;}
+    .logo-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:0.18em;color:var(--sand-light);text-transform:uppercase;}
+    .nav{display:flex;align-items:center;gap:10px;}
+    .nav a,.dropbtn{font-family:'Josefin Sans',sans-serif;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(245,230,204,0.75);text-decoration:none;padding:8px 14px;transition:color 0.3s;background:none;border:none;cursor:pointer;}
+    .nav a:hover,.dropbtn:hover{color:var(--teal);}
+    .dropdown{position:relative;}
+    .dropdown-content{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);min-width:270px;background:rgba(7,30,46,0.97);border:1px solid rgba(46,196,182,0.15);backdrop-filter:blur(12px);padding:8px 0;z-index:300;}
+    .dropdown:hover .dropdown-content{display:block;}
+    .dropdown-content a{display:block;padding:9px 20px;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,230,204,0.7);text-decoration:none;transition:all 0.25s;white-space:nowrap;}
+    .dropdown-content a:hover{color:var(--teal);background:rgba(46,196,182,0.07);padding-left:28px;}
+    .kebab-menu-toggle{display:none;background:none;border:none;color:var(--sand-light);cursor:pointer;padding:8px;}
+
+    @media(max-width:900px){
+      .header{padding:16px 24px;}
+      .kebab-menu-toggle{display:flex;}
+      .nav{display:none;position:fixed;top:0;right:0;height:100vh;width:280px;background:rgba(7,30,46,0.99);flex-direction:column;align-items:flex-start;padding:90px 32px 40px;gap:6px;border-left:1px solid rgba(46,196,182,0.15);}
+      .nav.active{display:flex;}
+      .dropdown-content{position:static;transform:none;display:none;background:rgba(255,255,255,0.04);border:none;padding:0;}
+      .dropdown.open .dropdown-content{display:block;}
+    }
+
+    /* SPLIT HERO */
+    .split-hero{position:relative;width:100%;height:100vh;min-height:600px;display:flex;flex-direction:row;overflow:hidden;}
+    .split-side{position:relative;flex:1;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;}
+    .side-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);filter:brightness(0.5);}
+    .split-side:hover .side-bg{transform:scale(1.04);filter:brightness(0.4);}
+    .left-side::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,rgba(7,30,46,0.3) 0%,transparent 60%),linear-gradient(to top,rgba(7,30,46,0.75) 0%,transparent 55%);}
+    .right-side::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(to left,rgba(61,26,10,0.3) 0%,transparent 60%),linear-gradient(to top,rgba(61,26,10,0.75) 0%,transparent 55%);}
+    /* Vertical divider desktop */
+    .split-hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.25),transparent);z-index:5;pointer-events:none;}
+    .side-content{position:relative;z-index:10;text-align:center;padding:0 32px 64px;display:flex;flex-direction:column;align-items:center;gap:16px;}
+    .side-label{font-size:0.62rem;letter-spacing:0.45em;text-transform:uppercase;color:var(--teal);}
+    .side-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.8rem);font-weight:300;letter-spacing:0.08em;color:var(--white);line-height:1;text-shadow:0 4px 30px rgba(0,0,0,0.5);}
+    .side-divider{width:40px;height:1px;background:var(--gold-light);opacity:0.6;transition:width 0.4s ease;}
+    .split-side:hover .side-divider{width:72px;opacity:1;}
+
+    /* BUTTONS — ALWAYS VISIBLE */
+    .service-btn{display:inline-flex;align-items:center;gap:10px;font-family:'Josefin Sans',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;padding:13px 30px;border:1px solid rgba(255,255,255,0.45);color:var(--white);background:rgba(255,255,255,0.1);backdrop-filter:blur(8px);transition:all 0.3s ease;}
+    .left-side .service-btn:hover{background:var(--teal);border-color:var(--teal);color:var(--ocean-deep);box-shadow:0 6px 28px rgba(46,196,182,0.4);}
+    .right-side .service-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--white);box-shadow:0 6px 28px rgba(201,151,58,0.4);}
+    .service-btn svg{transition:transform 0.3s;}
+    .service-btn:hover svg{transform:translateX(4px);}
+
+    /* CENTER CTA */
+    .center-glass{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:20;display:flex;flex-direction:column;align-items:center;}
+    .center-logo-ring{width:74px;height:74px;border-radius:50%;background:rgba(7,30,46,0.88);border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(10px);box-shadow:0 0 36px rgba(46,196,182,0.2);}
+    .center-logo-ring span{font-family:'Cormorant Garamond',serif;font-size:0.9rem;font-weight:600;letter-spacing:0.2em;color:var(--sand-light);}
+    .discover-btn{display:inline-block;margin-top:12px;font-family:'Josefin Sans',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;text-decoration:none;padding:11px 24px;color:var(--white);background:rgba(7,30,46,0.82);border:1px solid rgba(255,255,255,0.25);backdrop-filter:blur(10px);transition:all 0.3s ease;white-space:nowrap;}
+    .discover-btn:hover{background:var(--teal);border-color:var(--teal);color:var(--ocean-deep);}
+
+    /* MOBILE: horizontal split (top / bottom) */
+    @media(max-width:768px){
+      .split-hero{flex-direction:column;}
+      .split-hero::before{display:none;}
+      /* Horizontal divider line */
+      .split-hero::after{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(255,255,255,0.3),transparent);z-index:5;pointer-events:none;}
+      .split-side{flex:1;width:100%;align-items:center;justify-content:flex-end;}
+      .left-side::after{background:linear-gradient(to bottom,rgba(7,30,46,0.2) 0%,transparent 40%),linear-gradient(to top,rgba(7,30,46,0.8) 0%,transparent 60%);}
+      .right-side::after{background:linear-gradient(to bottom,rgba(61,26,10,0.2) 0%,transparent 40%),linear-gradient(to top,rgba(61,26,10,0.8) 0%,transparent 60%);}
+      .side-content{padding:0 20px 24px;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:8px 16px;align-items:center;}
+      .side-label{width:100%;text-align:center;margin-bottom:0;}
+      .side-title{font-size:clamp(1.6rem,5.5vw,2.2rem);}
+      .side-divider{display:none;}
+      .service-btn{padding:9px 20px;font-size:0.6rem;}
+      .center-glass{top:50%;left:50%;transform:translate(-50%,-50%);}
+      .center-logo-ring{width:50px;height:50px;}
+      .center-logo-ring span{font-size:0.7rem;}
+      .discover-btn{font-size:0.52rem;padding:8px 16px;margin-top:7px;}
+    }
+
+    /* WAVE */
+    .wave-transition{background:var(--brown-dark);line-height:0;overflow:hidden;}
+    .wave-transition svg{display:block;width:100%;}
+
+    /* FOOTER */
+    footer{background:var(--brown-dark);}
+
+    /* Single compact horizontal row */
+    .footer-content{
+      padding:22px 48px;
+      display:flex;flex-direction:row;align-items:center;
+      justify-content:space-between;gap:20px;flex-wrap:wrap;
+      border-bottom:1px solid rgba(232,201,154,0.1);
+    }
+    @media(max-width:768px){.footer-content{padding:18px 20px;gap:14px;}}
+
+    .footer-brand{display:flex;align-items:center;gap:12px;}
+    .footer-logo-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;letter-spacing:0.22em;color:var(--sand);text-transform:uppercase;}
+    .footer-brand-divider{width:1px;height:24px;background:rgba(232,201,154,0.22);}
+    .footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.82rem;color:rgba(232,201,154,0.42);letter-spacing:0.08em;}
+
+    .footer-nav{display:flex;flex-direction:row;flex-wrap:wrap;gap:2px 4px;align-items:center;list-style:none;}
+    .footer-nav a{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(232,201,154,0.5);text-decoration:none;padding:4px 7px;transition:color 0.3s;}
+    .footer-nav a:hover{color:var(--teal);}
+    .footer-nav .sep{color:rgba(232,201,154,0.2);font-size:0.6rem;padding:0 1px;}
+
+    .footer-social{display:flex;gap:14px;align-items:center;}
+    .footer-social a{color:rgba(232,201,154,0.4);transition:color 0.3s,transform 0.3s;display:flex;}
+    .footer-social a:hover{color:var(--teal);transform:translateY(-2px);}
+
+    .footer-bottom{padding:12px 48px;display:flex;justify-content:center;}
+    .footer-bottom p{font-size:0.58rem;letter-spacing:0.18em;color:rgba(232,201,154,0.22);text-transform:uppercase;}
+    @media(max-width:768px){
+      .footer-bottom{padding:12px 20px;}
+      .footer-tagline,.footer-brand-divider{display:none;}
+    }
+
+    /* TRIBAL BAND — UNTOUCHED */
+    .tribal-band{width:100%;background:var(--brown-dark);line-height:0;overflow:hidden;}
+    .tribal-band svg{display:block;width:100%;height:auto;}
+
+    /* WhatsApp */
+    .whatsapp-float{position:fixed;bottom:32px;right:32px;z-index:500;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:all 0.3s ease;text-decoration:none;}
+    .whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,0.6);}
+    .whatsapp-float svg{color:white;}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="siteHeader">
+    <a href="/index3.html" class="logo-container">
+      <img src="assests/logo/Paradise logo.png" alt="Paradise Logo" class="logo" onerror="this.style.display='none'">
+      <span class="logo-title">Paradise</span>
+    </a>
+    <button class="kebab-menu-toggle" id="menuToggle" aria-label="Menu Options">
+      <svg width="6" height="24" viewBox="0 0 6 24" fill="currentColor">
+        <circle cx="3" cy="4" r="2.5"/><circle cx="3" cy="12" r="2.5"/><circle cx="3" cy="20" r="2.5"/>
+      </svg>
+    </button>
+    <nav class="nav" id="navMenu">
+      <a href="/index3.html">Home</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Destinations ▾</a>
+        <div class="dropdown-content">
+          <a href="/dhow.html">Paradise Dhow</a>
+          <a href="/safari.html">Safari Destinations</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="excursions.html" class="dropbtn">Excursions ▾</a>
+        <div class="dropdown-content">
+         <a href="excursion/17-days-safari.html">17 days safari, mountain trekking</a>
+            <a href="excursion/watersports.html">watersports excursions</a>
+            <a href="excursion/mafia.html">2 Days 1 Night Mafia Island</a>
+            <a href="excursion/spice-farm.html">Spice Farm, Stone town & Prison Island</a>
+            <a href="excursion/kuza-caves.html">Day trip to Kuza Caves</a>
+            <a href="#excursion-jozani-forest">Day Trip to Jozani Forest</a>
+            <a href="#excursion-kizimkazi-dolphin">Day Trip to Kizimkazi Dolphin View point</a>
+            <a href="#excursion-sunset-cruising">Enjoy a Sunset Cruising at Kendwa Beach</a>
+            <a href="#excursion-swimming-turtles">Swimming with Turtles & Sunset Cruising</a>
+            <a href="#excursion-turtles-aquarium">Day Trip to Zanzibar Turtles Natural Aquarium</a>
+            <a href="#excursion-mnemba-full-day-exclusive">Mnemba Island Full Day Trip (Exclusive)</a>
+            <a href="#excursion-mnemba-half-day">Mnemba Island Half Day Trip</a>
+            <a href="excursion/safari-blue.html">Full Day Trip to Safari Blue</a>
+            <a href="#excursion-swimming-turtles">Swimming with Turtles</a>
+            <a href="/pages/excursion/tour-details.html">Nakupenda Sandbank, Prison Island & Stone Town</a>
+              
+        </div>
+      </div>
+      <a href="transfers.html">Transfers</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- SPLIT HERO -->
+  <section class="split-hero">
+    <!-- Top/Left — Dhow -->
+    <div class="split-side left-side">
+      <img src="assests/images/dhow2.jpg" alt="Paradise Dhow" class="side-bg">
+      <div class="side-content">
+        <span class="side-label">Luxury on Water</span>
+        <h2 class="side-title">Paradise Dhow</h2>
+        <div class="side-divider"></div>
+        <a href="/dhow.html" class="service-btn">
+          Explore Dhow
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <!-- Bottom/Right — Safari -->
+    <div class="split-side right-side">
+      <img src="assests/images/saf5.png" alt="Safari Destinations" class="side-bg">
+      <div class="side-content">
+        <span class="side-label">Wild Africa Awaits</span>
+        <h2 class="side-title">Safari Destinations</h2>
+        <div class="side-divider"></div>
+        <a href="/safari.html" class="service-btn">
+          Explore Safari
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <!-- Center Crest -->
+    <div class="center-glass">
+      <div class="center-logo-ring"><span>PE</span></div>
+      <a href="excursions.html" class="discover-btn">All Excursions</a>
+    </div>
+  </section>
+
+  <!-- Wave into footer -->
+  <div class="wave-transition">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,35 C360,70 720,0 1080,35 C1260,52 1380,18 1440,35 L1440,70 L0,70 Z" fill="#3d1a0a"/>
+    </svg>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <!-- Brand inline -->
+      <div class="footer-brand">
+        <span class="footer-logo-name">Paradise</span>
+        <div class="footer-brand-divider"></div>
+        <span class="footer-tagline">Zanzibar Luxury Experiences</span>
+      </div>
+      <!-- Nav inline -->
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index3.html">Home</a><span class="sep">·</span>
+        <a href="/dhow.html">Dhow</a><span class="sep">·</span>
+        <a href="/safari.html">Safari</a><span class="sep">·</span>
+        <a href="pages/contact.html">Contact</a>
+      </nav>
+      <!-- Social inline -->
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.98-10.169a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Paradise Experiences · All Rights Reserved</p>
+    </div>
+
+    <!-- TRIBAL PATTERN — UNTOUCHED -->
+    <div class="tribal-band">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="tribalTile" x="0" y="0" width="160" height="160" patternUnits="userSpaceOnUse">
+            <rect width="160" height="160" fill="#3d1a0a"/>
+            <g fill="#e8c99a">
+              <rect x="1" y="5" width="9" height="3.5" rx="1.2"/><rect x="14" y="5" width="9" height="3.5" rx="1.2"/><rect x="27" y="5" width="9" height="3.5" rx="1.2"/><rect x="40" y="5" width="9" height="3.5" rx="1.2"/><rect x="53" y="5" width="9" height="3.5" rx="1.2"/><rect x="66" y="5" width="9" height="3.5" rx="1.2"/><rect x="79" y="5" width="9" height="3.5" rx="1.2"/><rect x="92" y="5" width="9" height="3.5" rx="1.2"/><rect x="105" y="5" width="9" height="3.5" rx="1.2"/><rect x="118" y="5" width="9" height="3.5" rx="1.2"/><rect x="131" y="5" width="9" height="3.5" rx="1.2"/><rect x="144" y="5" width="9" height="3.5" rx="1.2"/>
+            </g>
+            <g fill="#e8c99a">
+              <polygon points="0,11 13,11 6.5,21"/><polygon points="13,11 26,11 19.5,21"/><polygon points="26,11 39,11 32.5,21"/><polygon points="39,11 52,11 45.5,21"/><polygon points="52,11 65,11 58.5,21"/><polygon points="65,11 78,11 71.5,21"/><polygon points="78,11 91,11 84.5,21"/><polygon points="91,11 104,11 97.5,21"/><polygon points="104,11 117,11 110.5,21"/><polygon points="117,11 130,11 123.5,21"/><polygon points="130,11 143,11 136.5,21"/><polygon points="143,11 156,11 149.5,21"/>
+            </g>
+            <rect x="0" y="21" width="160" height="90" fill="#e8c99a"/>
+            <g fill="none" stroke="#3d1a0a" stroke-width="4" stroke-linecap="round">
+              <path d="M40,66 C40,56 46,51 50,55 C55,60 52,70 44,72 C34,75 25,67 24,56 C22,42 33,33 44,33 C58,33 67,44 67,58 C67,76 54,87 38,87 C19,87 8,73 8,55 C8,33 24,21 43,21"/>
+            </g>
+            <g fill="none" stroke="#3d1a0a" stroke-width="4" stroke-linecap="round">
+              <path d="M120,66 C120,56 126,51 130,55 C135,60 132,70 124,72 C114,75 105,67 104,56 C102,42 113,33 124,33 C138,33 147,44 147,58 C147,76 134,87 118,87 C99,87 88,73 88,55 C88,33 104,21 123,21"/>
+            </g>
+            <path d="M67,55 Q80,40 88,55" fill="none" stroke="#3d1a0a" stroke-width="3.5"/>
+            <path d="M67,78 Q80,92 88,78" fill="none" stroke="#3d1a0a" stroke-width="3.5"/>
+            <g fill="#e8c99a">
+              <polygon points="0,149 13,149 6.5,139"/><polygon points="13,149 26,149 19.5,139"/><polygon points="26,149 39,149 32.5,139"/><polygon points="39,149 52,149 45.5,139"/><polygon points="52,149 65,149 58.5,139"/><polygon points="65,149 78,149 71.5,139"/><polygon points="78,149 91,149 84.5,139"/><polygon points="91,149 104,149 97.5,139"/><polygon points="104,149 117,149 110.5,139"/><polygon points="117,149 130,149 123.5,139"/><polygon points="130,149 143,149 136.5,139"/><polygon points="143,149 156,149 149.5,139"/>
+            </g>
+            <g fill="#e8c99a">
+              <rect x="1" y="151" width="9" height="3.5" rx="1.2"/><rect x="14" y="151" width="9" height="3.5" rx="1.2"/><rect x="27" y="151" width="9" height="3.5" rx="1.2"/><rect x="40" y="151" width="9" height="3.5" rx="1.2"/><rect x="53" y="151" width="9" height="3.5" rx="1.2"/><rect x="66" y="151" width="9" height="3.5" rx="1.2"/><rect x="79" y="151" width="9" height="3.5" rx="1.2"/><rect x="92" y="151" width="9" height="3.5" rx="1.2"/><rect x="105" y="151" width="9" height="3.5" rx="1.2"/><rect x="118" y="151" width="9" height="3.5" rx="1.2"/><rect x="131" y="151" width="9" height="3.5" rx="1.2"/><rect x="144" y="151" width="9" height="3.5" rx="1.2"/>
+            </g>
+            <rect x="0" y="156" width="160" height="1.5" fill="#e8c99a" opacity="0.5"/>
+            <rect x="0" y="159" width="160" height="1" fill="#e8c99a" opacity="0.3"/>
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="1440" height="160" fill="url(#tribalTile)"/>
+      </svg>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/255000000000" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+      <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.128.552 4.195 1.603 6.012L.414 23.586l5.679-1.49A11.967 11.967 0 0012.031 24c6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm0 21.981a9.96 9.96 0 01-5.068-1.378l-.363-.215-3.766.987.994-3.668-.236-.375A9.957 9.957 0 012.05 12.031C2.05 6.523 6.524 2.05 12.031 2.05c5.507 0 9.981 4.473 9.981 9.981 0 5.508-4.474 9.981-9.981 9.981zm5.474-7.485c-.3-.15-1.774-.876-2.048-.976-.274-.1-.474-.15-.674.15-.2.3-.774.975-.95 1.175-.174.2-.349.225-.649.075-.3-.15-1.266-.466-2.41-1.484-.89-.792-1.492-1.771-1.666-2.071-.174-.3-.018-.462.132-.612.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.674-1.625-.924-2.225-.244-.585-.494-.505-.674-.515-.174-.01-.374-.01-.574-.01-.2 0-.524.075-.8.375-.274.3-1.05 1.025-1.05 2.5s1.074 2.9 1.224 3.1c.15.2 2.112 3.221 5.112 4.516.714.307 1.272.49 1.705.626.717.227 1.37.195 1.884.118.577-.087 1.774-.725 2.024-1.425.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z"/>
+    </svg>
+  </a>
+
+  <script>
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); });
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (menuToggle && navMenu) { menuToggle.addEventListener('click', () => navMenu.classList.toggle('active')); }
+    document.querySelectorAll('.dropdown .dropbtn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        if (window.innerWidth <= 900) { e.preventDefault(); btn.closest('.dropdown').classList.toggle('open'); }
+      });
+    });
+  </script>
+</body>
+</html>

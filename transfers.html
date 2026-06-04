@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Luxury transfers & private taxi services in Zanzibar. Fixed prices for Stone Town, Nungwi, Paje, Kendwa, and all major beaches. Book your safe and comfortable ride.">
+  <title>Transfers Services | Paradise Zanzibar</title>
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: same luxury vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Josefin Sans', sans-serif;
+      background-color: #fef9f0;
+      color: #1e1e1e;
+      overflow-x: hidden;
+    }
+
+    /* ========== reusable luxe accents ========== */
+    :root {
+      --gold: #d4af37;
+      --gold-soft: #e8c99a;
+      --dark-earth: #3d1a0a;
+      --sand: #f5e7d9;
+      --charcoal: #2c2b26;
+    }
+
+    /* ----- header (transparent + gold) ----- */
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.8rem 5%;
+      z-index: 200;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+    .header.scrolled {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 1rem 5%;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      font-size: 2rem;
+      color: var(--gold);
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+    }
+    .logo-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .nav a, .dropbtn {
+      color: white;
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin: 0 0.8rem;
+      transition: 0.2s;
+    }
+    .nav a:hover, .dropbtn:hover { color: var(--gold); }
+    .kebab-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+    @media (max-width: 900px) {
+      .kebab-menu-toggle { display: block; }
+      .nav {
+        display: none;
+        position: absolute;
+        top: 75px;
+        right: 5%;
+        background: rgba(0,0,0,0.95);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 1.5rem;
+        border-radius: 16px;
+        gap: 1rem;
+        text-align: right;
+      }
+      .nav.active { display: flex; }
+      .nav a, .dropbtn { margin: 0.3rem 0; }
+    }
+
+    /* hero banner — transfers specific */
+    .transfers-hero {
+      position: relative;
+      width: 100%;
+      height: 55vh;
+      min-height: 400px;
+      background: linear-gradient(107deg, #1f2a1b 0%, #0f130c 100%), url('/assests/images/alphard2.jpg');
+      background-blend-mode: overlay;
+      background-size: cover;
+      background-position: center 35%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 3rem;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(circle at 30% 50%, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      max-width: 800px;
+      padding: 0 1.5rem;
+    }
+    .hero-content h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.6rem;
+      letter-spacing: 3px;
+      font-weight: 600;
+      text-shadow: 0 5px 18px rgba(0,0,0,0.6);
+    }
+    .hero-content p {
+      font-size: 1.05rem;
+      letter-spacing: 1px;
+      font-weight: 300;
+      margin-top: 0.8rem;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.2);
+      backdrop-filter: blur(8px);
+      border-radius: 40px;
+      padding: 0.3rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      border: 0.5px solid var(--gold);
+    }
+
+    /* main container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* section intro */
+    .intro-text {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .intro-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: var(--dark-earth);
+    }
+    .intro-text p {
+      max-width: 650px;
+      margin: 0.8rem auto 0;
+      color: #4a3b2c;
+    }
+
+    /* price grid */
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.8rem;
+      margin: 2.5rem 0 2rem;
+    }
+    .price-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.2rem 1.5rem 1.5rem 1.5rem;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+      transition: all 0.25s ease;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      backdrop-filter: blur(2px);
+    }
+    .price-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+      box-shadow: 0 25px 40px rgba(0, 0, 0, 0.08);
+    }
+    .card-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .card-left i {
+      font-size: 2rem;
+      color: var(--gold);
+      width: 48px;
+      text-align: center;
+    }
+    .destination-info h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+    }
+    .destination-info .type {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #b98f48;
+      font-weight: 500;
+    }
+    .price-tag {
+      text-align: right;
+    }
+    .price-tag .price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--dark-earth);
+      line-height: 1;
+    }
+    .price-tag .price small {
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+    .price-tag .trip-type {
+      font-size: 0.7rem;
+      color: #6b5a48;
+    }
+
+    /* special sections for round trip */
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 500;
+      margin: 2.5rem 0 1rem 0;
+      border-left: 4px solid var(--gold);
+      padding-left: 1rem;
+      color: #2c241a;
+    }
+    .note-box {
+      background: #fef5e8;
+      border-radius: 28px;
+      padding: 1.2rem 2rem;
+      margin: 2rem 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #e0cfbb;
+    }
+    .note-box i {
+      font-size: 1.6rem;
+      color: var(--gold);
+      margin-right: 1rem;
+    }
+    .note-text {
+      font-weight: 400;
+      color: #4e3b28;
+    }
+    .btn-book {
+      background: var(--dark-earth);
+      padding: 0.7rem 1.8rem;
+      border-radius: 40px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-book:hover {
+      background: #b47c2e;
+      transform: scale(0.97);
+    }
+    .whatsapp-link {
+      background: #25D366;
+      color: white;
+      border: none;
+    }
+
+    /* footer (matching luxury safari style) */
+    footer {
+      background: var(--dark-earth);
+      margin-top: 2rem;
+    }
+    .footer-content {
+      padding: 28px 48px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(232,201,154,0.2);
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .footer-logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      color: var(--gold-soft);
+    }
+    .footer-nav a {
+      color: rgba(232,201,154,0.7);
+      text-decoration: none;
+      font-size: 0.7rem;
+      margin: 0 0.8rem;
+      text-transform: uppercase;
+    }
+    .footer-social a {
+      color: rgba(232,201,154,0.6);
+      margin: 0 0.4rem;
+      font-size: 1.2rem;
+      transition: 0.2s;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding: 14px;
+      font-size: 0.6rem;
+      letter-spacing: 1px;
+      color: rgba(232,201,154,0.4);
+    }
+    @media (max-width: 700px) {
+      .footer-content { flex-direction: column; gap: 16px; text-align: center; }
+      .price-card { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .price-tag { text-align: left; margin-top: 8px; }
+      .hero-content h1 { font-size: 2.3rem; }
+    }
+    .whatsapp-fixed {
+      position: fixed;
+      bottom: 26px;
+      right: 26px;
+      background: #25D366;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 28px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.2);
+      z-index: 300;
+      transition: 0.2s;
+    }
+    .whatsapp-fixed:hover { transform: scale(1.08); background: #128C7E; }
+  </style>
+</head>
+<body>
+
+<!-- Header (same safari/paradise style) -->
+<header class="header" id="mainHeader">
+  <div class="logo-container">
+    <i class="fas fa-umbrella-beach logo-icon"></i>
+    <span class="logo-title">Paradise</span>
+  </div>
+  <button class="kebab-menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  <nav class="nav" id="navMenu">
+    <a href="index3.html">Home</a>
+    <a href="safari.html">Safaris</a>
+    <a href="transfers.html" style="color: #d4af37;">Transfers</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Hero Section with transfer vibe -->
+<section class="transfers-hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><i class="fas fa-car-side"></i> Premium Transfers • 24/7</div>
+    <h1>Seamless Transfers<br>Across Zanzibar</h1>
+    <p>Private, air-conditioned vehicles • Fixed prices • Meet & greet at airport/hotel</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="intro-text">
+    <h2>Your ride, your rhythm</h2>
+    <p>Luxury door-to-door transfers from Stone Town to every dreamy beach. Professional drivers, no hidden fees, and instant confirmation.</p>
+  </div>
+
+  <!-- TRANSFERS GRID based on zanzibarterminus data -->
+  <div class="price-grid" id="transfersGrid"></div>
+
+  <!-- additional round trip & special notes -->
+  <div class="section-title"><i class="fas fa-exchange-alt" style="margin-right: 10px;"></i> Round trip & VIP offers</div>
+  <div class="price-grid" id="roundtripGrid"></div>
+
+  <!-- extra info box -->
+  <div class="note-box">
+    <div><i class="fas fa-clock"></i> <span class="note-text"><strong>Flexible schedule</strong> — we wait for delayed flights, free baby seat on request, and all taxes included.</span></div>
+    <a href="#" class="btn-book whatsapp-link" style="background: #25D366;"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+  </div>
+
+  <!-- additional transfer combination (stone town + custom) -->
+  <div class="section-title"><i class="fas fa-map-marked-alt"></i> Premium zones & long distance</div>
+  <div class="price-grid" id="premiumGrid"></div>
+</div>
+
+<!-- footer tribal -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand"><span class="footer-logo-name">PARADISE ZANZIBAR</span></div>
+    <div class="footer-nav">
+      <a href="#">Home</a> <span style="color:#e8c99a55;">|</span>
+      <a href="#">Safaris</a> <span style="color:#e8c99a55;">|</span>
+      <a href="#">Transfers</a> <span style="color:#e8c99a55;">|</span>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Paradise Experiences — Zanzibar luxury transfers & travel</div>
+  <div class="tribal-band" style="background: #3d1a0a; height: 8px;"></div>
+</footer>
+
+<a href="https://wa.me/255759028881" class="whatsapp-fixed" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  // ---------- exact data from provided link (zanzibarterminus) + modern formatting ----------
+  const standardDestinations = [
+    { name: "Nungwi", price: 40, icon: "fas fa-water", type: "One way" },
+    { name: "Kendwa", price: 40, icon: "fas fa-umbrella-beach", type: "One way" },
+    { name: "Kiwengwa", price: 40, icon: "fas fa-palm-tree", type: "One way" },
+    { name: "Uroa", price: 40, icon: "fas fa-fish", type: "One way" },
+    { name: "Kizimkazi", price: 40, icon: "fas fa-dolphin", type: "One way" },
+    { name: "Jambiani", price: 40, icon: "fas fa-sun", type: "One way" },
+    { name: "Paje", price: 40, icon: "fas fa-wind", type: "One way" },
+    { name: "Pongwe", price: 40, icon: "fas fa-ship", type: "One way" },
+    { name: "Michamvi", price: 40, icon: "fas fa-tree", type: "One way" },
+    { name: "Matemwe", price: 40, icon: "fas fa-moon", type: "One way" },
+    { name: "Stone Town", price: 20, icon: "fas fa-landmark", type: "City Center" }
+  ];
+
+  // Round trip and pick-up/drop-off combos (based on provided text: "Round trip (go/return)")
+  const roundTripData = [
+    { name: "Stone Town", oneWayPrice: 20, roundPrice: 70, icon: "fas fa-route", desc: "Round trip (go/return)" },
+    { name: "Nungwi / Kendwa", oneWayPrice: 40, roundPrice: 70, icon: "fas fa-arrows-spin", desc: "Round trip" },
+    { name: "Kiwengwa / Uroa", oneWayPrice: 40, roundPrice: 70, icon: "fas fa-arrows-spin", desc: "Round trip" },
+    { name: "Paje / Jambiani", oneWayPrice: 80, roundPrice: 90, icon: "fas fa-arrow-right-arrow-left", desc: "Round trip (special rate)" },
+    { name: "Michamvi / Matemwe", oneWayPrice: 80, roundPrice: 95, icon: "fas fa-exchange-alt", desc: "Return transfer" },
+    { name: "Kizimkazi", oneWayPrice: 90, roundPrice: 100, icon: "fas fa-rotate-right", desc: "Round trip" }
+  ];
+
+  // additional premium / pick-up drop-off according to the list: $40, $70, $80, $90, $65, $35, $30 variants
+  const premiumTransfers = [
+    { zone: "Pick up & drop off (any south/east)", price: 40, roundHint: "Round trip $70", icon: "fas fa-taxi" },
+    { zone: "Pick up & drop off (Paje premium)", price: 80, roundHint: "Round trip $90", icon: "fas fa-car-side" },
+    { zone: "Pick up & drop off (Michamvi Premium)", price: 90, roundHint: "Round trip $100", icon: "fas fa-caravan" },
+    { zone: "Pick up & drop off (Nungwi luxury)", price: 40, roundHint: "Round trip $70", icon: "fas fa-gem" },
+    { zone: "VIP Transfer (Any beach → Stone Town)", price: 70, roundHint: "Return $140", icon: "fas fa-crown" },
+    { zone: "Executive sedan (Airport → Resort)", price: 65, roundHint: "Luxury vehicle", icon: "fas fa-chauffeur-cap" },
+    { zone: "Stone Town local shuttle", price: 35, roundHint: "Hotel to Ferry", icon: "fas fa-bus" },
+    { zone: "Short distance (Within Stone Town)", price: 30, roundHint: "up to 5km", icon: "fas fa-moped" }
+  ];
+
+  function buildGrid(containerId, items, isRoundTripMode = false) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    container.innerHTML = "";
+    items.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "price-card";
+      if (isRoundTripMode) {
+        // round trip special card layout
+        card.innerHTML = `
+          <div class="card-left">
+            <i class="${item.icon}"></i>
+            <div class="destination-info">
+              <h3>${item.name}</h3>
+              <div class="type">${item.desc || "Return transfer"}</div>
+            </div>
+          </div>
+          <div class="price-tag">
+            <div class="price">$${item.oneWayPrice}<small> / one way</small></div>
+            <div class="trip-type"><i class="fas fa-undo-alt"></i> Round trip: $${item.roundPrice}</div>
+          </div>
+        `;
+      } else if (item.zone) {
+        // premium specials
+        card.innerHTML = `
+          <div class="card-left">
+            <i class="${item.icon}"></i>
+            <div class="destination-info">
+              <h3>${item.zone}</h3>
+              <div class="type">Private transfer</div>
+            </div>
+          </div>
+          <div class="price-tag">
+            <div class="price">$${item.price}<small> / way</small></div>
+            <div class="trip-type">${item.roundHint || ""}</div>
+          </div>
+        `;
+      } else {
+        // standard destination (one way)
+        card.innerHTML = `
+          <div class="card-left">
+            <i class="${item.icon}"></i>
+            <div class="destination-info">
+              <h3>${item.name}</h3>
+              <div class="type">${item.type || "One way transfer"}</div>
+            </div>
+          </div>
+          <div class="price-tag">
+            <div class="price">$${item.price}<small> / vehicle</small></div>
+            <div class="trip-type">up to 4 pax</div>
+          </div>
+        `;
+      }
+      container.appendChild(card);
+    });
+  }
+
+  // render standard one-way transfers
+  buildGrid("transfersGrid", standardDestinations, false);
+  // render round trip specials (from the list with round prices)
+  buildGrid("roundtripGrid", roundTripData, true);
+  // render additional premium services (pick-up/drop-off info)
+  const premiumContainer = document.getElementById("premiumGrid");
+  if (premiumContainer) {
+    premiumContainer.innerHTML = "";
+    premiumTransfers.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "price-card";
+      card.innerHTML = `
+        <div class="card-left">
+          <i class="${item.icon}"></i>
+          <div class="destination-info">
+            <h3>${item.zone}</h3>
+            <div class="type">Direct & private</div>
+          </div>
+        </div>
+        <div class="price-tag">
+          <div class="price">$${item.price}<small> / transfer</small></div>
+          <div class="trip-type">${item.roundHint || "Instant booking"}</div>
+        </div>
+      `;
+      premiumContainer.appendChild(card);
+    });
+  }
+
+  // -- mobile menu toggles --
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  }
+  // Header scroll effect
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
+  // optional: simple interactive WhatsApp booking link update
+  const waButtons = document.querySelectorAll('.whatsapp-link');
+  waButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.open('https://wa.me/255759028881?text=Hello%20Paradise%2C%20I%20need%20a%20transfer%20in%20Zanzibar.', '_blank');
+    });
+  });
+  const fixedWa = document.querySelector('.whatsapp-fixed');
+  if (fixedWa) fixedWa.href = 'https://wa.me/255759028881?text=I%27d%20like%20to%20book%20a%20transfer%20please.';
+</script>
+</body>
+</html>

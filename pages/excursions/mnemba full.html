@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Mnemba Island Full Day Trip (Exclusive) - Ranked #1 Best Beach Destination in Africa. Swim with dolphins, snorkel at Mnemba reef, enjoy seafood BBQ and sunset cruise." />
+  <title>Mnemba Island Full Day Trip | Paradise Experiences</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400;600&family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <style>
+    /* ============================================================
+       ROOT VARIABLES  (from reference)
+    ============================================================ */
+    :root {
+      --brown-dark: #3d1a0a;
+      --sand: #e8c99a;
+      --sand-light: #f5e6cc;
+      --ocean-deep: #071e2e;
+      --teal: #2ec4b6;
+      --gold: #c9973a;
+      --gold-light: #f0c060;
+      --white: #ffffff;
+      --orange: #e67e22;
+      --orange-dark: #cf711f;
+      --text-dark: #1e2a2f;
+      --text-mid: #2c3e41;
+      --border-light: #e0e7e9;
+    }
+
+    /* ============================================================
+       RESET  (from reference)
+    ============================================================ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--white);
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: 'Cinzel', serif; }
+
+    /* ============================================================
+       HEADER & NAVIGATION  — matches reference exactly
+    ============================================================ */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      background: linear-gradient(to bottom, rgba(7,30,46,0.95), rgba(7,30,46,0));
+      backdrop-filter: blur(6px);
+      transition: background 0.4s;
+    }
+    .header.scrolled { background: rgba(7,30,46,0.97); }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo { height: 38px; width: auto; object-fit: contain; }
+    .logo-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: var(--sand-light);
+      text-transform: uppercase;
+    }
+
+    /* Desktop nav */
+    .nav { display: flex; align-items: center; gap: 10px; }
+    .nav a,
+    .dropbtn {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(245,230,204,0.75);
+      text-decoration: none;
+      padding: 8px 14px;
+      transition: color 0.3s;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .nav a:hover, .dropbtn:hover { color: var(--teal); }
+
+    /* Dropdown */
+    .dropdown { position: relative; }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 270px;
+      background: rgba(7,30,46,0.97);
+      border: 1px solid rgba(46,196,182,0.15);
+      backdrop-filter: blur(12px);
+      padding: 8px 0;
+      z-index: 300;
+      max-height: 420px;
+      overflow-y: auto;
+    }
+    .dropdown:hover .dropdown-content { display: block; }
+    .dropdown-content a {
+      display: block;
+      padding: 9px 20px;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245,230,204,0.7);
+      text-decoration: none;
+      transition: all 0.25s;
+      white-space: nowrap;
+    }
+    .dropdown-content a:hover {
+      color: var(--teal);
+      background: rgba(46,196,182,0.07);
+      padding-left: 28px;
+    }
+
+    /* Kebab toggle — shown only on mobile */
+    .kebab-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--sand-light);
+      cursor: pointer;
+      padding: 8px;
+      z-index: 210;
+    }
+
+    /* Close button inside mobile nav */
+    .close-menu {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--sand-light);
+      font-size: 1.8rem;
+      cursor: pointer;
+      padding: 8px;
+      position: absolute;
+      top: 16px; right: 24px;
+      transition: color 0.3s;
+      line-height: 1;
+      z-index: 310;
+    }
+    .close-menu:hover { color: var(--teal); }
+
+    /* ============================================================
+       RESPONSIVE HEADER — matches reference mobile behaviour
+    ============================================================ */
+    @media (max-width: 900px) {
+      .header { padding: 16px 24px; }
+      .kebab-menu-toggle { display: flex; }
+
+      .nav {
+        display: none;
+        position: fixed;
+        top: 0; right: 0;
+        height: 100vh;
+        width: 280px;
+        background: rgba(7,30,46,0.99);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 90px 32px 40px;
+        gap: 6px;
+        border-left: 1px solid rgba(46,196,182,0.15);
+        overflow-y: auto;
+        z-index: 300;
+      }
+      .nav.active { display: flex; }
+      .close-menu { display: block; }
+
+      /* Mobile dropdown: static, toggled by .open class */
+      .dropdown-content {
+        position: static;
+        transform: none;
+        display: none;
+        background: rgba(255,255,255,0.04);
+        border: none;
+        padding: 0;
+        min-width: auto;
+        max-height: none;
+        overflow-y: visible;
+      }
+      .dropdown.open .dropdown-content { display: block; }
+      .dropdown-content a {
+        white-space: normal;
+        font-size: 0.6rem;
+        padding: 10px 20px 10px 30px;
+      }
+      .dropdown-content a:hover { padding-left: 36px; }
+
+      /* Remove hover trigger on mobile so only click/tap works */
+      .dropdown:hover .dropdown-content { display: none; }
+      .dropdown.open .dropdown-content { display: block; }
+    }
+
+    /* ============================================================
+       HERO SECTION  (preserved from target)
+    ============================================================ */
+    .tour-hero {
+      position: relative;
+      height: 85vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tour-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .tour-hero-bg .bg-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .tour-hero-bg .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35));
+    }
+    .tour-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      width: 90%;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .tour-hero-text { max-width: 800px; color: var(--white); }
+    .tour-subtitle {
+      font-size: 1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.2);
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+      margin-bottom: 1rem;
+    }
+    .tour-title {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin: 1rem 0;
+      line-height: 1.2;
+    }
+    .tour-desc {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      max-width: 600px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      background: var(--orange);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); }
+
+    /* ============================================================
+       CONTENT LAYOUT  (preserved from target)
+    ============================================================ */
+    .tour-content-wrapper {
+      max-width: 1280px;
+      margin: 3rem auto;
+      padding: 0 5%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+    }
+    .tour-main-column { flex: 2.5; min-width: 260px; }
+    .tour-sidebar { flex: 1; min-width: 280px; }
+
+    /* ============================================================
+       TABS  (preserved from target)
+    ============================================================ */
+    .tour-tabs {
+      display: flex;
+      gap: 1.5rem;
+      border-bottom: 2px solid var(--border-light);
+      margin-bottom: 2rem;
+    }
+    .tab-link {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 0.75rem 0;
+      text-decoration: none;
+      color: #5f6c70;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .tab-link.active { color: var(--orange); }
+    .tab-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 100%; height: 2px;
+      background: var(--orange);
+    }
+
+    /* ============================================================
+       TOUR SECTIONS  (preserved from target)
+    ============================================================ */
+    .content-block { display: block; margin-bottom: 2rem; }
+    .tour-section { margin-bottom: 2rem; }
+    .tour-section h3 { font-size: 1.6rem; margin-bottom: 1rem; color: var(--text-dark); }
+    .tour-section p { line-height: 1.7; color: var(--text-mid); margin-bottom: 0.75rem; }
+
+    .tour-includes-list,
+    .fish-list,
+    .hints-list {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+    }
+    .tour-includes-list li,
+    .fish-list li,
+    .hints-list li {
+      width: calc(50% - 1rem);
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+    }
+    .tour-includes-list li::before { content: "✓"; color: var(--orange); position: absolute; left: 0; font-weight: bold; }
+    .fish-list li::before { content: "🐟"; color: var(--orange); position: absolute; left: 0; }
+    .hints-list li::before { content: "✨"; color: var(--orange); position: absolute; left: 0; }
+
+    .duration-box {
+      background: #fef5ec;
+      padding: 1rem 1.5rem;
+      border-radius: 16px;
+      border-left: 4px solid var(--orange);
+      margin: 1rem 0;
+    }
+    .note-box {
+      background: #fff3e6;
+      padding: 1rem 1.5rem;
+      border-radius: 16px;
+      border-left: 4px solid var(--orange);
+      margin: 1rem 0;
+    }
+
+    .price-table { width: 100%; border-collapse: collapse; background: #f9fafb; border-radius: 20px; overflow: hidden; }
+    .price-table th,
+    .price-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #e2e8f0; }
+    .price-table th { background: var(--orange); color: var(--white); font-weight: 600; }
+
+    /* ============================================================
+       GALLERY  (preserved from target)
+    ============================================================ */
+    .animated-gallery { margin: 2.5rem 0; }
+    .gallery-heading {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+      border-left: 5px solid var(--orange);
+      padding-left: 1rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+    .gallery-card {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 1 / 0.9;
+      background: #f0f2f4;
+      box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .gallery-card:hover img { transform: scale(1.03); }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding-bottom: 0.8rem;
+      }
+      .gallery-card {
+        flex: 0 0 80%;
+        scroll-snap-align: start;
+        aspect-ratio: 4 / 3;
+        animation: gentlePulse 3s infinite ease-in-out;
+      }
+      @keyframes gentlePulse {
+        0% { transform: scale(1); box-shadow: 0 8px 16px rgba(0,0,0,0.1);}
+        50% { transform: scale(1.02); box-shadow: 0 12px 24px rgba(0,0,0,0.15);}
+        100% { transform: scale(1); box-shadow: 0 8px 16px rgba(0,0,0,0.1);}
+      }
+    }
+    @media (max-width: 640px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid { display: flex; }
+    }
+
+    /* ============================================================
+       RELATED TOURS  (preserved from target)
+    ============================================================ */
+    .related-cards { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem; }
+    .r-card {
+      flex: 1; min-width: 200px;
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .r-card:hover { transform: translateY(-3px); }
+    .r-card img { width: 100%; height: 160px; object-fit: cover; }
+    .r-info { padding: 1rem; }
+    .r-info h4 { font-size: 1rem; margin-bottom: 0.3rem; }
+    .r-price { color: var(--orange); font-weight: bold; }
+
+    /* ============================================================
+       BOOKING SIDEBAR WIDGET  (preserved from target)
+    ============================================================ */
+    .booking-widget {
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+      padding: 1.8rem;
+      border: 1px solid #edf2f4;
+      position: sticky;
+      top: 100px;
+    }
+    .widget-header {
+      border-bottom: 2px solid var(--orange);
+      padding-bottom: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .price-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #6b7a7e; }
+    .price-val { font-size: 2.2rem; font-weight: 800; color: var(--text-dark); }
+    .price-val sup { font-size: 1rem; font-weight: 400; }
+
+    .enquiry-form .form-group { margin-bottom: 1rem; }
+    .enquiry-form input,
+    .enquiry-form textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #cfdfe5;
+      border-radius: 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .enquiry-form input:focus,
+    .enquiry-form textarea:focus {
+      outline: none;
+      border-color: var(--orange);
+      box-shadow: 0 0 0 2px rgba(230,126,34,0.2);
+    }
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      margin: 1rem 0;
+      cursor: pointer;
+    }
+    .btn-submit {
+      background: var(--orange);
+      color: var(--white);
+      width: 100%;
+      padding: 0.9rem;
+      border: none;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { background: var(--orange-dark); }
+    .btn-wishlist {
+      background: transparent;
+      border: 1px solid #cfdfe5;
+      border-radius: 40px;
+      padding: 0.7rem;
+      margin-top: 1rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-wishlist:hover { background: #fef5ec; border-color: var(--orange); }
+
+    /* ============================================================
+       FOOTER  — matches reference exactly
+    ============================================================ */
+    footer {
+      background: var(--brown-dark);
+      color: var(--sand);
+    }
+    .footer-content {
+      padding: 22px 48px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(232,201,154,0.1);
+    }
+    .footer-brand { display: flex; align-items: center; gap: 12px; }
+    .footer-logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      color: var(--sand);
+      text-transform: uppercase;
+    }
+    .footer-brand-divider { width: 1px; height: 24px; background: rgba(232,201,154,0.22); }
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.82rem;
+      color: rgba(232,201,154,0.42);
+      letter-spacing: 0.08em;
+    }
+    .footer-nav {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2px 4px;
+      align-items: center;
+      list-style: none;
+    }
+    .footer-nav a {
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(232,201,154,0.5);
+      text-decoration: none;
+      padding: 4px 7px;
+      transition: color 0.3s;
+    }
+    .footer-nav a:hover { color: var(--teal); }
+    .footer-nav .sep { color: rgba(232,201,154,0.2); font-size: 0.6rem; padding: 0 1px; }
+    .footer-social { display: flex; gap: 14px; align-items: center; }
+    .footer-social a {
+      color: rgba(232,201,154,0.4);
+      transition: color 0.3s, transform 0.3s;
+      display: flex;
+    }
+    .footer-social a:hover { color: var(--teal); transform: translateY(-2px); }
+    .footer-bottom {
+      padding: 12px 48px;
+      display: flex;
+      justify-content: center;
+    }
+    .footer-bottom p {
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      color: rgba(232,201,154,0.22);
+      text-transform: uppercase;
+    }
+
+    /* WhatsApp float (from reference) */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 32px; right: 32px;
+      z-index: 500;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,0.6); }
+    .whatsapp-float svg { color: var(--white); }
+
+    /* Back to top (from reference) */
+    .back-to-top {
+      position: fixed;
+      bottom: 96px; right: 32px;
+      width: 48px; height: 48px;
+      background: var(--orange);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 499;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      border: none;
+      font-size: 1.2rem;
+    }
+    .back-to-top.show { opacity: 1; visibility: visible; }
+    .back-to-top:hover { background: var(--orange-dark); transform: translateY(-3px); }
+
+    /* ============================================================
+       RESPONSIVE — CONTENT  (preserved from target)
+    ============================================================ */
+    @media (max-width: 992px) {
+      .tour-title { font-size: 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      .tour-title { font-size: 2.2rem; }
+      .tour-content-wrapper { flex-direction: column; }
+      .tour-includes-list li,
+      .fish-list li,
+      .hints-list li { width: 100%; }
+      .tour-sidebar .booking-widget { position: static; margin-top: 1rem; }
+      .related-cards { flex-direction: column; }
+      .footer-content { padding: 18px 20px; }
+      .footer-bottom { padding: 12px 20px; }
+      .footer-tagline,
+      .footer-brand-divider { display: none; }
+    }
+    @media (max-width: 480px) {
+      .tour-title { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER — from reference
+  ============================================================ -->
+  <header class="header" id="siteHeader">
+    <a href="/index.html" class="logo-container">
+      <img src="/assests/logo/Paradise logo.png" alt="Paradise Logo" class="logo" onerror="this.style.display='none'">
+      <span class="logo-title">Paradise</span>
+    </a>
+
+    <button class="kebab-menu-toggle" id="menuToggle" aria-label="Menu Options">
+      <svg width="6" height="24" viewBox="0 0 6 24" fill="currentColor">
+        <circle cx="3" cy="4" r="2.5"/>
+        <circle cx="3" cy="12" r="2.5"/>
+        <circle cx="3" cy="20" r="2.5"/>
+      </svg>
+    </button>
+
+    <nav class="nav" id="navMenu">
+      <button class="close-menu" id="closeMenuBtn" aria-label="Close menu">✕</button>
+
+      <a href="/index.html">Home</a>
+
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Destinations ▾</a>
+        <div class="dropdown-content">
+          <a href="/dhow.html">Paradise Dhow</a>
+          <a href="/safari.html">Safari Destinations</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="/excursions.html" class="dropbtn">Excursions ▾</a>
+        <div class="dropdown-content">
+          <a href="/pages/excursions/17 days safari.html">17 Days Safari & Mountain Trekking</a>
+          <a href="/pages/excursions/watersports.html">Watersports Excursions</a>
+          <a href="/pages/excursions/2 days mafia.html">2 Days 1 Night Mafia Island</a>
+          <a href="/pages/excursions/spice-farm.html">Spice Farm, Stone Town & Prison Island</a>
+          <a href="/pages/excursions/kuza-caves.html">Day Trip to Kuza Caves</a>
+          <a href="/pages/excursions/day trip jozani.html">Day Trip to Jozani Forest</a>
+          <a href="/pages/excursions/kizimkazi dolph view.html">Day Trip to Kizimkazi Dolphin View Point</a>
+          <a href="/pages/excursions/kwenda sunset.html">Enjoy a Sunset Cruising at Kendwa Beach</a>
+          <a href="/pages/excursions/turtle baraka.html">Swimming with Turtles & Sunset Cruising</a>
+          <a href="/pages/excursions/turtles natural.html">Day Trip to Zanzibar Turtles Natural Aquarium</a>
+          <a href="/pages/excursions/mnemba full.html">Mnemba Island Full Day Trip (Exclusive)</a>
+          <a href="/pages/excursions/mnemba half.html">Mnemba Island Half Day Trip</a>
+          <a href="/pages/excursions/safari blue.html">Full Day Trip to Safari Blue</a>
+          <a href="/pages/excursions/nakupenda.html">Nakupenda Sandbank, Prison Island & Stone Town</a>
+        </div>
+      </div>
+
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       HERO SECTION  (preserved from target)
+  ============================================================ -->
+  <section class="tour-hero">
+    <div class="tour-hero-bg">
+      <img src="/assests/images/dhow2.jpg" alt="Mnemba Island" class="bg-img" />
+      <div class="overlay"></div>
+    </div>
+    <div class="tour-hero-content">
+      <div class="tour-hero-text">
+        <span class="tour-subtitle">Exclusive | #1 Beach in Africa</span>
+        <h1 class="tour-title">Mnemba Island Full Day Trip (Exclusive)</h1>
+        <p class="tour-desc">Ranked No.1 Best Beach Destination in Africa by Trip Savvy. Swim with dolphins, snorkel pristine reefs, enjoy seafood BBQ &amp; sunset cruise.</p>
+        <a href="#detail" class="btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          Explore Tour
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MAIN CONTENT + SIDEBAR  (preserved from target)
+  ============================================================ -->
+  <div class="tour-content-wrapper">
+    <div class="tour-main-column">
+
+      <!-- Tabs -->
+      <nav class="tour-tabs">
+        <button class="tab-link active" data-tab="detail">Detail</button>
+        <button class="tab-link" data-tab="itinerary">Itinerary</button>
+      </nav>
+
+      <!-- DETAIL TAB -->
+      <div id="detail" class="content-block">
+        <section class="tour-section">
+          <h3>Tour Overview</h3>
+          <p>This is one of our most recommended full-day trips in Zanzibar, where you can swim and snorkel at three different spots (Dolphins, relaxing at the Sandbanks, and Snorkeling at the Mnemba reef). Mnemba Island was ranked No.1 Best Beach Destination in Africa by Trip Savvy.</p>
+          <p>For the sake of precision, Mnemba is a reef and not an Atoll, as sometimes called Mnemba Atoll in many publications and charts. Mnemba is well known for the excellent clarity of its waters (for this area of the Indian Ocean) and the unusually prolific and diverse corals and tropical marine life where you can able to spot different species of fish while Snorkeling.</p>
+          <p>Mnemba Island is one of the best spots in Africa for underwater adventures. Mnemba Atoll – Located North East Coast of the Zanzibar Island. Tourists flock here to combine relaxation with scuba diving or snorkeling at the incredibly colorful and diverse reefs that surround the island. This atoll features an easy dive down to about 20 meters and quite a bit of coral, you can also spot dolphins and sea turtles due to the deeper water in the area.</p>
+          <div class="duration-box">
+            <p><strong>Duration:</strong> Starts 08:30 AM – Ends 07:00 PM (till sunset)</p>
+          </div>
+        </section>
+
+        <section class="tour-section">
+          <h3>Experience Highlights</h3>
+          <ul class="hints-list">
+            <li>Sailing on traditional dhow</li>
+            <li>Snorkeling at Mnemba's pristine reef</li>
+            <li>Lunch onboard (Soft drinks, Wine &amp; Beer, tropical fresh fruits)</li>
+            <li>BBQ fish &amp; Seafood Coconut curry served with chapati</li>
+            <li>Pirate fruit salad &amp; snacks</li>
+            <li>Sunset cruise with high chance to spot dolphins</li>
+            <li>Chilling at lagoon (if tide allows)</li>
+          </ul>
+        </section>
+
+        <section class="tour-section">
+          <h3>Marine Life You May See</h3>
+          <ul class="fish-list">
+            <li>Angel Fish</li>
+            <li>Blue Spotted Rays</li>
+            <li>Black Snappers</li>
+            <li>Groupers</li>
+            <li>Red Tooth Triggers</li>
+            <li>Flounder &amp; Octopuses</li>
+            <li>Leaf Fish &amp; Scorpion Fish</li>
+            <li>Stone Fish &amp; Frog Fish</li>
+            <li>Trevallies</li>
+            <li>Dolphins &amp; Sea Turtles</li>
+          </ul>
+        </section>
+
+        <section class="tour-section">
+          <h3>Important Note</h3>
+          <div class="note-box">
+            <p><i class="fas fa-info-circle"></i> Tourists must come with towels and swimming suits. Snorkeling gear and life jackets are provided on request.</p>
+          </div>
+        </section>
+
+        <section class="tour-section">
+          <h3>Departure &amp; Return Location</h3>
+          <p>Hotel pickup from your accommodation in Zanzibar. Drop-off at your hotel after sunset cruise.</p>
+        </section>
+
+        <section class="tour-section">
+          <h3>Tour Includes</h3>
+          <ul class="tour-includes-list">
+            <li>Transfer: hotel pick up and drop off</li>
+            <li>Lunch during excursions: BBQ-Seafood / Beverages-water/Soda</li>
+            <li>Snorkeling gear (Life Jacket, Mask &amp; Flippers)</li>
+            <li>Experienced Professional Tour guide</li>
+            <li>Dhow sailing experience</li>
+            <li>Entry fee - All taxes, fuel surcharges and service fees</li>
+          </ul>
+        </section>
+
+        <section class="tour-section">
+          <h3>Tour Excludes</h3>
+          <ul class="tour-includes-list" style="list-style-type: none;">
+            <li style="padding-left:1.5rem; position:relative;"><span style="position:absolute; left:0;">✕</span> Premium alcoholic beverages (basic options included)</li>
+            <li style="padding-left:1.5rem; position:relative;"><span style="position:absolute; left:0;">✕</span> Tips and gratuities</li>
+            <li style="padding-left:1.5rem; position:relative;"><span style="position:absolute; left:0;">✕</span> Personal expenses</li>
+          </ul>
+        </section>
+
+        <section class="tour-section">
+          <h3>Price Details</h3>
+          <table class="price-table">
+            <thead>
+              <tr><th>No of People</th><th>Group Price (USD)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1 (Solo Traveler) - Sharing Trip</td><td>$150</td></tr>
+              <tr><td>2 (Per Couple)</td><td>$420</td></tr>
+              <tr><td>3 People (Group)</td><td>$520</td></tr>
+              <tr><td>4 People (Group)</td><td>$600</td></tr>
+              <tr><td>5 People (Group)</td><td>$750</td></tr>
+              <tr><td>6 People (Group)</td><td>$850</td></tr>
+              <tr><td>7 People (Group)</td><td>$990</td></tr>
+              <tr><td>8 People (Group)</td><td>$1200</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 0.75rem; font-size: 0.85rem;"><i class="fas fa-star"></i> Private tour available. Contact us for customized groups.</p>
+        </section>
+      </div>
+
+      <!-- ITINERARY TAB -->
+      <div id="itinerary" class="content-block" style="display:none;">
+        <h2 style="margin-bottom:1.5rem;">Detailed Itinerary</h2>
+        <section class="tour-section"><h3>08:30 AM - Hotel Pickup</h3><p>Our driver will pick you up from your hotel in Zanzibar for the journey to the North East Coast departure point.</p></section>
+        <section class="tour-section"><h3>09:00 AM - Boarding &amp; Departure</h3><p>Arrive at the departure point, meet your captain and crew. Board a traditional wooden dhow and set sail toward Mnemba Island.</p></section>
+        <section class="tour-section"><h3>09:30 AM - Dolphin Spotting</h3><p>First stop: Search for dolphins in their natural habitat. High chance to spot these magnificent creatures. If conditions permit, you may have the opportunity to swim with them.</p></section>
+        <section class="tour-section"><h3>10:30 AM - Snorkeling at Mnemba Reef</h3><p>Experience the incredible underwater world of Mnemba's pristine reef. Explore vibrant coral gardens and encounter diverse marine life including angel fish, groupers, rays, and colorful tropical fish.</p></section>
+        <section class="tour-section"><h3>12:30 PM - Sandbank Relaxation</h3><p>Stop at a beautiful sandbank that emerges during low tide. Relax, swim, and enjoy the stunning turquoise waters.</p></section>
+        <section class="tour-section"><h3>01:30 PM - Seafood BBQ Lunch</h3><p>Enjoy a delicious seafood BBQ lunch onboard. Feast on grilled fish, seafood coconut curry served with chapati, tropical fresh fruits, and refreshing beverages including soft drinks, wine, and beer.</p></section>
+        <section class="tour-section"><h3>03:00 PM - Lagoon Chilling &amp; Second Snorkel</h3><p>If tide permits, visit a serene lagoon for relaxation. Second snorkeling session at another pristine spot on the reef.</p></section>
+        <section class="tour-section"><h3>05:00 PM - Sunset Cruise</h3><p>Begin the magical sunset cruise back toward the shore. Watch the sky transform into brilliant colors while enjoying snacks and the peaceful ocean atmosphere.</p></section>
+        <section class="tour-section"><h3>07:00 PM - Return to Hotel</h3><p>Arrive back at the departure point and transfer to your hotel, concluding your exclusive Mnemba Island adventure.</p></section>
+      </div>
+
+      <!-- GALLERY -->
+      <div class="animated-gallery">
+        <div class="gallery-heading">
+          <i class="fas fa-camera-retro"></i> Mnemba Gallery
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-card"><img src="/assests/images/snorkeling.jpg" alt="Mnemba Island sandbank"></div>
+          <div class="gallery-card"><img src="/assests/images/mnemba.jpg" alt="Dolphin swimming"></div>
+          <div class="gallery-card"><img src="/assests/images/float.jpg" alt="Snorkeling at Mnemba reef"></div>
+          <div class="gallery-card"><img src="/assests/images/sunset cruise.jpg" alt="Sunset cruise"></div>
+        </div>
+        <p style="font-size: 0.75rem; text-align: center; margin-top: 12px; color: #7f8c8d;"><i class="fas fa-mobile-alt"></i> On mobile devices, images animate gently every 3 seconds</p>
+      </div>
+
+      <!-- RELATED TOURS -->
+      <div class="content-block">
+        <h2 style="margin-bottom:1rem;">Related Tours</h2>
+        <div class="related-cards">
+          <div class="r-card">
+            <img src="/assests/images/mafia.jpg" alt="Mafia Island">
+            <div class="r-info"><h4>2 Days 1 Night Mafia Island</h4><span class="r-price">From $650</span></div>
+          </div>
+          <div class="r-card">
+            <img src="/assests/images/Safari from Zanzibar.jpg" alt="Safari Blue">
+            <div class="r-info"><h4>Full Day Trip to Safari Blue Zanzibar</h4><span class="r-price">From $150</span></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /tour-main-column -->
+
+    <!-- SIDEBAR -->
+    <aside class="tour-sidebar">
+      <div class="booking-widget">
+        <div class="widget-header">
+          <span class="price-label">Price</span>
+          <div class="price-val"><sup>From</sup> $150</div>
+        </div>
+        <div class="enquiry-form">
+          <div class="form-group"><input type="text" placeholder="Full Name*" id="enquiryName"></div>
+          <div class="form-group"><input type="email" placeholder="Email Address*" id="enquiryEmail"></div>
+          <div class="form-group"><textarea placeholder="Your Enquiry* (please specify number of people and preferred date)" rows="5" id="enquiryMessage"></textarea></div>
+          <label class="checkbox-container">
+            <input type="checkbox" id="enquiryTerms"> I agree with Terms of Service and Privacy Statement.
+          </label>
+          <button type="button" class="btn-submit" id="submitEnquiry">Submit Enquiry</button>
+        </div>
+        <button class="btn-wishlist">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          Save To Wish List <span>(1560)</span>
+        </button>
+      </div>
+    </aside>
+  </div><!-- /tour-content-wrapper -->
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ============================================================
+       FOOTER — from reference
+  ============================================================ -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="footer-logo-name">Paradise</span>
+        <div class="footer-brand-divider"></div>
+        <span class="footer-tagline">Zanzibar Luxury Experiences</span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/index.html">Home</a><span class="sep">·</span>
+        <a href="/dhow.html">Dhow</a><span class="sep">·</span>
+        <a href="/safari.html">Safari</a><span class="sep">·</span>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.98-10.169a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter / X">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Paradise Experiences · All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp (from reference) -->
+  <a href="https://wa.me/255785897102" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+      <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.128.552 4.195 1.603 6.012L.414 23.586l5.679-1.49A11.967 11.967 0 0012.031 24c6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm0 21.981a9.96 9.96 0 01-5.068-1.378l-.363-.215-3.766.987.994-3.668-.236-.375A9.957 9.957 0 012.05 12.031C2.05 6.523 6.524 2.05 12.031 2.05c5.507 0 9.981 4.473 9.981 9.981 0 5.508-4.474 9.981-9.981 9.981zm5.474-7.485c-.3-.15-1.774-.876-2.048-.976-.274-.1-.474-.15-.674.15-.2.3-.774.975-.95 1.175-.174.2-.349.225-.649.075-.3-.15-1.266-.466-2.41-1.484-.89-.792-1.492-1.771-1.666-2.071-.174-.3-.018-.462.132-.612.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.674-1.625-.924-2.225-.244-.585-.494-.505-.674-.515-.174-.01-.374-.01-.574-.01-.2 0-.524.075-.8.375-.274.3-1.05 1.025-1.05 2.5s1.074 2.9 1.224 3.1c.15.2 2.112 3.221 5.112 4.516.714.307 1.272.49 1.705.626.717.227 1.37.195 1.884.118.577-.087 1.774-.725 2.024-1.425.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z"/>
+    </svg>
+  </a>
+
+  <!-- ============================================================
+       JAVASCRIPT — from reference (header/footer logic)
+  ============================================================ -->
+  <script>
+    /* ---------- Header scroll effect ---------- */
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    /* ---------- Mobile nav (kebab / slide-in panel) ---------- */
+    const menuToggle   = document.getElementById('menuToggle');
+    const navMenu      = document.getElementById('navMenu');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+
+    function openMenu() {
+      navMenu.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      navMenu.classList.remove('active');
+      document.body.style.overflow = '';
+      // Collapse any open dropdown
+      document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+    }
+
+    menuToggle.addEventListener('click', e => {
+      e.stopPropagation();
+      navMenu.classList.contains('active') ? closeMenu() : openMenu();
+    });
+    closeMenuBtn.addEventListener('click', e => { e.stopPropagation(); closeMenu(); });
+
+    // Close when clicking outside the panel
+    document.addEventListener('click', e => {
+      if (navMenu.classList.contains('active') &&
+          !navMenu.contains(e.target) &&
+          !menuToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    // Close when a nav link is tapped on mobile
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 900 && navMenu.classList.contains('active')) closeMenu();
+      });
+    });
+
+    // Mobile dropdown toggles (tap dropbtn to expand/collapse)
+    document.querySelectorAll('.dropdown .dropbtn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          btn.closest('.dropdown').classList.toggle('open');
+        }
+      });
+    });
+
+    /* ---------- Content tabs (preserved from target) ---------- */
+    const detailDiv    = document.getElementById('detail');
+    const itineraryDiv = document.getElementById('itinerary');
+
+    function activateTab(id) {
+      detailDiv.style.display    = id === 'detail'    ? 'block' : 'none';
+      itineraryDiv.style.display = id === 'itinerary' ? 'block' : 'none';
+      document.querySelectorAll('.tab-link').forEach(t => {
+        t.classList.toggle('active', t.dataset.tab === id);
+      });
+    }
+
+    document.querySelectorAll('.tab-link').forEach(tab => {
+      tab.addEventListener('click', () => {
+        activateTab(tab.dataset.tab);
+        history.pushState(null, '', `#${tab.dataset.tab}`);
+      });
+    });
+
+    // Honour hash on load
+    const hash = window.location.hash.replace('#', '');
+    activateTab(hash === 'itinerary' ? 'itinerary' : 'detail');
+
+    /* ---------- Enquiry form (preserved from target) ---------- */
+    document.getElementById('submitEnquiry').addEventListener('click', () => {
+      const name    = document.getElementById('enquiryName').value.trim();
+      const email   = document.getElementById('enquiryEmail').value.trim();
+      const message = document.getElementById('enquiryMessage').value.trim();
+      const terms   = document.getElementById('enquiryTerms').checked;
+      if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
+      if (!terms) { alert('Please agree to the Terms of Service.'); return; }
+      alert('Thank you for your enquiry! We will contact you within 24 hours to confirm your Mnemba Island exclusive trip.');
+      document.getElementById('enquiryName').value    = '';
+      document.getElementById('enquiryEmail').value   = '';
+      document.getElementById('enquiryMessage').value = '';
+      document.getElementById('enquiryTerms').checked = false;
+    });
+
+    /* ---------- Back to top (from reference) ---------- */
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    window.addEventListener('scroll', () => {
+      backToTopBtn.classList.toggle('show', window.scrollY > 400);
+    });
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+</body>
+</html>

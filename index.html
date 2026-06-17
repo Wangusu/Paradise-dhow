@@ -31,15 +31,22 @@
     .dropdown:hover .dropdown-content{display:block;}
     .dropdown-content a{display:block;padding:9px 20px;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,230,204,0.7);text-decoration:none;transition:all 0.25s;white-space:nowrap;}
     .dropdown-content a:hover{color:var(--teal);background:rgba(46,196,182,0.07);padding-left:28px;}
-    .kebab-menu-toggle{display:none;background:none;border:none;color:var(--sand-light);cursor:pointer;padding:8px;}
+    .kebab-menu-toggle{display:none;background:none;border:none;color:var(--sand-light);cursor:pointer;padding:8px;z-index:210;}
+    
+    /* Close Menu Button Styles */
+    .close-menu{display:none;background:none;border:none;color:var(--sand-light);font-size:1.8rem;cursor:pointer;padding:8px;position:absolute;top:16px;right:24px;transition:color 0.3s;line-height:1;z-index:310;}
+    .close-menu:hover{color:var(--teal);}
 
     @media(max-width:900px){
       .header{padding:16px 24px;}
       .kebab-menu-toggle{display:flex;}
-      .nav{display:none;position:fixed;top:0;right:0;height:100vh;width:280px;background:rgba(7,30,46,0.99);flex-direction:column;align-items:flex-start;padding:90px 32px 40px;gap:6px;border-left:1px solid rgba(46,196,182,0.15);}
+      .nav{display:none;position:fixed;top:0;right:0;height:100vh;width:280px;background:rgba(7,30,46,0.99);flex-direction:column;align-items:flex-start;padding:90px 32px 40px;gap:6px;border-left:1px solid rgba(46,196,182,0.15);overflow-y:auto;z-index:300;}
       .nav.active{display:flex;}
-      .dropdown-content{position:static;transform:none;display:none;background:rgba(255,255,255,0.04);border:none;padding:0;}
+      .close-menu{display:block;}
+      .dropdown-content{position:static;transform:none;display:none;background:rgba(255,255,255,0.04);border:none;padding:0;min-width:auto;}
       .dropdown.open .dropdown-content{display:block;}
+      .dropdown-content a{white-space:normal;font-size:0.6rem;padding:10px 20px 10px 30px;}
+      .dropdown-content a:hover{padding-left:36px;}
     }
 
     /* SPLIT HERO */
@@ -49,7 +56,6 @@
     .split-side:hover .side-bg{transform:scale(1.04);filter:brightness(0.4);}
     .left-side::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,rgba(7,30,46,0.3) 0%,transparent 60%),linear-gradient(to top,rgba(7,30,46,0.75) 0%,transparent 55%);}
     .right-side::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(to left,rgba(61,26,10,0.3) 0%,transparent 60%),linear-gradient(to top,rgba(61,26,10,0.75) 0%,transparent 55%);}
-    /* Vertical divider desktop */
     .split-hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.25),transparent);z-index:5;pointer-events:none;}
     .side-content{position:relative;z-index:10;text-align:center;padding:0 32px 64px;display:flex;flex-direction:column;align-items:center;gap:16px;}
     .side-label{font-size:0.62rem;letter-spacing:0.45em;text-transform:uppercase;color:var(--teal);}
@@ -57,10 +63,10 @@
     .side-divider{width:40px;height:1px;background:var(--gold-light);opacity:0.6;transition:width 0.4s ease;}
     .split-side:hover .side-divider{width:72px;opacity:1;}
 
-    /* BUTTONS — ALWAYS VISIBLE */
+    /* BUTTONS */
     .service-btn{display:inline-flex;align-items:center;gap:10px;font-family:'Josefin Sans',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;padding:13px 30px;border:1px solid rgba(255,255,255,0.45);color:var(--white);background:rgba(255,255,255,0.1);backdrop-filter:blur(8px);transition:all 0.3s ease;}
-    .left-side .service-btn:hover{background:var(--teal);border-color:var(--teal);color:var(--ocean-deep);box-shadow:0 6px 28px rgba(46,196,182,0.4);}
-    .right-side .service-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--white);box-shadow:0 6px 28px rgba(201,151,58,0.4);}
+    .left-side .service-btn{background:var(--teal);border-color:var(--teal);color:var(--ocean-deep);box-shadow:0 6px 28px rgba(46,196,182,0.4);}
+    .right-side .service-btn{background:var(--gold-light);border-color:var(--gold-light);color:var(--white);box-shadow:0 6px 28px rgba(201,151,58,0.4);}
     .service-btn svg{transition:transform 0.3s;}
     .service-btn:hover svg{transform:translateX(4px);}
 
@@ -71,11 +77,9 @@
     .discover-btn{display:inline-block;margin-top:12px;font-family:'Josefin Sans',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;text-decoration:none;padding:11px 24px;color:var(--white);background:rgba(7,30,46,0.82);border:1px solid rgba(255,255,255,0.25);backdrop-filter:blur(10px);transition:all 0.3s ease;white-space:nowrap;}
     .discover-btn:hover{background:var(--teal);border-color:var(--teal);color:var(--ocean-deep);}
 
-    /* MOBILE: horizontal split (top / bottom) */
     @media(max-width:768px){
       .split-hero{flex-direction:column;}
       .split-hero::before{display:none;}
-      /* Horizontal divider line */
       .split-hero::after{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(255,255,255,0.3),transparent);z-index:5;pointer-events:none;}
       .split-side{flex:1;width:100%;align-items:center;justify-content:flex-end;}
       .left-side::after{background:linear-gradient(to bottom,rgba(7,30,46,0.2) 0%,transparent 40%),linear-gradient(to top,rgba(7,30,46,0.8) 0%,transparent 60%);}
@@ -97,30 +101,19 @@
 
     /* FOOTER */
     footer{background:var(--brown-dark);}
-
-    /* Single compact horizontal row */
-    .footer-content{
-      padding:22px 48px;
-      display:flex;flex-direction:row;align-items:center;
-      justify-content:space-between;gap:20px;flex-wrap:wrap;
-      border-bottom:1px solid rgba(232,201,154,0.1);
-    }
+    .footer-content{padding:22px 48px;display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-bottom:1px solid rgba(232,201,154,0.1);}
     @media(max-width:768px){.footer-content{padding:18px 20px;gap:14px;}}
-
     .footer-brand{display:flex;align-items:center;gap:12px;}
     .footer-logo-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;letter-spacing:0.22em;color:var(--sand);text-transform:uppercase;}
     .footer-brand-divider{width:1px;height:24px;background:rgba(232,201,154,0.22);}
     .footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.82rem;color:rgba(232,201,154,0.42);letter-spacing:0.08em;}
-
     .footer-nav{display:flex;flex-direction:row;flex-wrap:wrap;gap:2px 4px;align-items:center;list-style:none;}
     .footer-nav a{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(232,201,154,0.5);text-decoration:none;padding:4px 7px;transition:color 0.3s;}
     .footer-nav a:hover{color:var(--teal);}
     .footer-nav .sep{color:rgba(232,201,154,0.2);font-size:0.6rem;padding:0 1px;}
-
     .footer-social{display:flex;gap:14px;align-items:center;}
     .footer-social a{color:rgba(232,201,154,0.4);transition:color 0.3s,transform 0.3s;display:flex;}
     .footer-social a:hover{color:var(--teal);transform:translateY(-2px);}
-
     .footer-bottom{padding:12px 48px;display:flex;justify-content:center;}
     .footer-bottom p{font-size:0.58rem;letter-spacing:0.18em;color:rgba(232,201,154,0.22);text-transform:uppercase;}
     @media(max-width:768px){
@@ -128,7 +121,7 @@
       .footer-tagline,.footer-brand-divider{display:none;}
     }
 
-    /* TRIBAL BAND — UNTOUCHED */
+    /* TRIBAL BAND */
     .tribal-band{width:100%;background:var(--brown-dark);line-height:0;overflow:hidden;}
     .tribal-band svg{display:block;width:100%;height:auto;}
 
@@ -142,7 +135,7 @@
 
   <!-- HEADER -->
   <header class="header" id="siteHeader">
-    <a href="/index3.html" class="logo-container">
+    <a href="/index.html" class="logo-container">
       <img src="assests/logo/Paradise logo.png" alt="Paradise Logo" class="logo" onerror="this.style.display='none'">
       <span class="logo-title">Paradise</span>
     </a>
@@ -152,7 +145,8 @@
       </svg>
     </button>
     <nav class="nav" id="navMenu">
-      <a href="/index3.html">Home</a>
+      <button class="close-menu" id="closeMenuBtn" aria-label="Close menu">✕</button>
+      <a href="/index.html">Home</a>
       <div class="dropdown">
         <a href="#" class="dropbtn">Destinations ▾</a>
         <div class="dropdown-content">
@@ -163,32 +157,29 @@
       <div class="dropdown">
         <a href="excursions.html" class="dropbtn">Excursions ▾</a>
         <div class="dropdown-content">
-         <a href="excursion/17-days-safari.html">17 days safari, mountain trekking</a>
-            <a href="excursion/watersports.html">watersports excursions</a>
-            <a href="excursion/mafia.html">2 Days 1 Night Mafia Island</a>
-            <a href="excursion/spice-farm.html">Spice Farm, Stone town & Prison Island</a>
-            <a href="excursion/kuza-caves.html">Day trip to Kuza Caves</a>
-            <a href="#excursion-jozani-forest">Day Trip to Jozani Forest</a>
-            <a href="#excursion-kizimkazi-dolphin">Day Trip to Kizimkazi Dolphin View point</a>
-            <a href="#excursion-sunset-cruising">Enjoy a Sunset Cruising at Kendwa Beach</a>
-            <a href="#excursion-swimming-turtles">Swimming with Turtles & Sunset Cruising</a>
-            <a href="#excursion-turtles-aquarium">Day Trip to Zanzibar Turtles Natural Aquarium</a>
-            <a href="#excursion-mnemba-full-day-exclusive">Mnemba Island Full Day Trip (Exclusive)</a>
-            <a href="#excursion-mnemba-half-day">Mnemba Island Half Day Trip</a>
-            <a href="excursion/safari-blue.html">Full Day Trip to Safari Blue</a>
-            <a href="#excursion-swimming-turtles">Swimming with Turtles</a>
-            <a href="/pages/excursion/tour-details.html">Nakupenda Sandbank, Prison Island & Stone Town</a>
-              
+          <a href="/pages/excursions/17 days safari.html">17 days safari, mountain trekking</a>
+          <a href="/pages/excursions/watersports.html">watersports excursions</a>
+          <a href="/pages/excursions/2 days mafia.html">2 Days 1 Night Mafia Island</a>
+          <a href="/pages/excursions/spice-farm.html">Spice Farm, Stone town & Prison Island</a>
+          <a href="/pages/excursions/kuza-caves.html">Day trip to Kuza Caves</a>
+          <a href="/pages/excursions/day trip jozani.html">Day Trip to Jozani Forest</a>
+          <a href="/pages/excursions/kizimkazi dolph view.html">Day Trip to Kizimkazi Dolphin View point</a>
+          <a href="/pages/excursions/kwenda sunset.html">Enjoy a Sunset Cruising at Kendwa Beach</a>
+          <a href="/pages/excursions/turtle baraka.html">Swimming with Turtles & Sunset Cruising</a>
+          <a href="/pages/excursions/turtles natural.html">Day Trip to Zanzibar Turtles Natural Aquarium</a>
+          <a href="/pages/excursions/mnemba full.html">Mnemba Island Full Day Trip (Exclusive)</a>
+          <a href="/pages/excursions/mnemba half.html">Mnemba Island Half Day Trip</a>
+          <a href="/pages/excursions/safari blue.html">Full Day Trip to Safari Blue</a>
+          <a href="/pages/excursions/turtles natural.html">Swimming with Turtles</a>
+          <a href="/pages/excursions/nakupenda.html">Nakupenda Sandbank, Prison Island & Stone Town</a>
         </div>
       </div>
-      <a href="transfers.html">Transfers</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <!-- SPLIT HERO -->
   <section class="split-hero">
-    <!-- Top/Left — Dhow -->
     <div class="split-side left-side">
       <img src="assests/images/dhow2.jpg" alt="Paradise Dhow" class="side-bg">
       <div class="side-content">
@@ -201,7 +192,6 @@
         </a>
       </div>
     </div>
-    <!-- Bottom/Right — Safari -->
     <div class="split-side right-side">
       <img src="assests/images/saf5.png" alt="Safari Destinations" class="side-bg">
       <div class="side-content">
@@ -214,7 +204,6 @@
         </a>
       </div>
     </div>
-    <!-- Center Crest -->
     <div class="center-glass">
       <div class="center-logo-ring"><span>PE</span></div>
       <a href="excursions.html" class="discover-btn">All Excursions</a>
@@ -231,20 +220,17 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-content">
-      <!-- Brand inline -->
       <div class="footer-brand">
         <span class="footer-logo-name">Paradise</span>
         <div class="footer-brand-divider"></div>
         <span class="footer-tagline">Zanzibar Luxury Experiences</span>
       </div>
-      <!-- Nav inline -->
       <nav class="footer-nav" aria-label="Footer">
-        <a href="index3.html">Home</a><span class="sep">·</span>
+        <a href="index.html">Home</a><span class="sep">·</span>
         <a href="/dhow.html">Dhow</a><span class="sep">·</span>
         <a href="/safari.html">Safari</a><span class="sep">·</span>
         <a href="pages/contact.html">Contact</a>
       </nav>
-      <!-- Social inline -->
       <div class="footer-social">
         <a href="#" aria-label="Instagram">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.98-10.169a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
@@ -261,7 +247,6 @@
       <p>&copy; 2026 Paradise Experiences · All Rights Reserved</p>
     </div>
 
-    <!-- TRIBAL PATTERN — UNTOUCHED -->
     <div class="tribal-band">
       <svg viewBox="0 0 1440 160" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -298,7 +283,7 @@
   </footer>
 
   <!-- WhatsApp -->
-  <a href="https://wa.me/255000000000" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <a href="https://wa.me/255785897102" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
       <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.128.552 4.195 1.603 6.012L.414 23.586l5.679-1.49A11.967 11.967 0 0012.031 24c6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm0 21.981a9.96 9.96 0 01-5.068-1.378l-.363-.215-3.766.987.994-3.668-.236-.375A9.957 9.957 0 012.05 12.031C2.05 6.523 6.524 2.05 12.031 2.05c5.507 0 9.981 4.473 9.981 9.981 0 5.508-4.474 9.981-9.981 9.981zm5.474-7.485c-.3-.15-1.774-.876-2.048-.976-.274-.1-.474-.15-.674.15-.2.3-.774.975-.95 1.175-.174.2-.349.225-.649.075-.3-.15-1.266-.466-2.41-1.484-.89-.792-1.492-1.771-1.666-2.071-.174-.3-.018-.462.132-.612.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.674-1.625-.924-2.225-.244-.585-.494-.505-.674-.515-.174-.01-.374-.01-.574-.01-.2 0-.524.075-.8.375-.274.3-1.05 1.025-1.05 2.5s1.074 2.9 1.224 3.1c.15.2 2.112 3.221 5.112 4.516.714.307 1.272.49 1.705.626.717.227 1.37.195 1.884.118.577-.087 1.774-.725 2.024-1.425.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z"/>
     </svg>
@@ -307,13 +292,83 @@
   <script>
     const header = document.getElementById('siteHeader');
     window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); });
+    
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
-    if (menuToggle && navMenu) { menuToggle.addEventListener('click', () => navMenu.classList.toggle('active')); }
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    
+    // Function to close menu
+    function closeMenu() {
+        if (navMenu) {
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        // Close all open dropdowns
+        document.querySelectorAll('.dropdown.open').forEach(dropdown => {
+            dropdown.classList.remove('open');
+        });
+    }
+    
+    // Function to open menu
+    function openMenu() {
+        if (navMenu) {
+            navMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    // Toggle menu on hamburger button click
+    if (menuToggle && navMenu) { 
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (navMenu.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        }); 
+    }
+    
+    // Close menu on close button click
+    if (closeMenuBtn) {
+        closeMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeMenu();
+        });
+    }
+    
+    // Close menu when clicking outside (on backdrop)
+    document.addEventListener('click', function(event) {
+        if (navMenu && navMenu.classList.contains('active') && 
+            !navMenu.contains(event.target) && 
+            menuToggle && !menuToggle.contains(event.target)) {
+            closeMenu();
+        }
+    });
+    
+    // Close menu when any nav link is clicked (on mobile)
+    if (navMenu) {
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 900 && navMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+        });
+    }
+    
+    // Handle dropdown toggles on mobile
     document.querySelectorAll('.dropdown .dropbtn').forEach(btn => {
-      btn.addEventListener('click', e => {
-        if (window.innerWidth <= 900) { e.preventDefault(); btn.closest('.dropdown').classList.toggle('open'); }
-      });
+        btn.addEventListener('click', e => {
+            if (window.innerWidth <= 900) { 
+                e.preventDefault(); 
+                const dropdown = btn.closest('.dropdown');
+                if (dropdown) {
+                    dropdown.classList.toggle('open'); 
+                }
+            }
+        });
     });
   </script>
 </body>
